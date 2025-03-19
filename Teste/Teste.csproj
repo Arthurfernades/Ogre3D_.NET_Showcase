@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4152681C-C1AF-437B-B6F0-F6C4CB36F317}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Teste</RootNamespace>
+    <AssemblyName>Teste</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\Bin\x64\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="ModalDirectX.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ModalDirectX.xaml.cs">
+      <DependentUpon>ModalDirectX.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\OgreImage\OgreImage.csproj">
+      <Project>{1f147ec2-ae60-44f8-8146-02730bedc686}</Project>
+      <Name>OgreImage</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\listbox\dragon.png" />
+    <Resource Include="img\listbox\ogrehead.png" />
+    <Resource Include="img\ogreWallpaper.png" />
+    <Resource Include="img\output_new.png" />
+    <Resource Include="img\listbox\Sinbad.png" />
+    <Resource Include="img\visualPlanTutorial.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\cam_icon.png" />
+    <Resource Include="img\trash_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\ogre_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\closed_eye_icon.png" />
+    <Resource Include="img\opened_eye_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\img_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\zoomall_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\flashlight_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\Top_direction_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\E_direction_arrow_icon.png" />
+    <Resource Include="img\N_direction_arrow_icon.png" />
+    <Resource Include="img\S_direction_arrow_icon.png" />
+    <Resource Include="img\W_direction_arrow_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\NE_direction_arrow_icon .png" />
+    <Resource Include="img\NW_direction_arrow_icon.png" />
+    <Resource Include="img\SE_direction_arrow_icon.png" />
+    <Resource Include="img\SW_direction_arrow_icon .png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\ProjectionType_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\plane_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\listbox\athene.png" />
+    <Resource Include="img\listbox\Barrel.png" />
+    <Resource Include="img\listbox\column.png" />
+    <Resource Include="img\listbox\Columns.png" />
+    <Resource Include="img\listbox\cornell.png" />
+    <Resource Include="img\listbox\cube.png" />
+    <Resource Include="img\listbox\DamagedHelmet.png" />
+    <Resource Include="img\listbox\facial.png" />
+    <Resource Include="img\listbox\fish.png" />
+    <Resource Include="img\listbox\geosphere4500.png" />
+    <Resource Include="img\listbox\jaiqua.png" />
+    <Resource Include="img\listbox\knot.png" />
+    <Resource Include="img\listbox\ninja.png" />
+    <Resource Include="img\listbox\penguin.png" />
+    <Resource Include="img\listbox\plane.png" />
+    <Resource Include="img\listbox\razor.png" />
+    <Resource Include="img\listbox\RomanBathLower.png" />
+    <Resource Include="img\listbox\RomanBathUpper.png" />
+    <Resource Include="img\listbox\RZR-002.png" />
+    <Resource Include="img\listbox\ShaderSystem.png" />
+    <Resource Include="img\listbox\sibenik.png" />
+    <Resource Include="img\listbox\spine.png" />
+    <Resource Include="img\listbox\TestLevel_b0.png" />
+    <Resource Include="img\listbox\tudorhouse.png" />
+    <Resource Include="img\listbox\WoodPallet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\axis_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\film_ico.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\new_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\fog_icon.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

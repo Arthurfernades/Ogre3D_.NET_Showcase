@@ -1,0 +1,44 @@
+D:\3D\Ogre 3D\Projetos\OgreImage\OgreImage\bin\x64\Debug\OgreImage.dll
+D:\3D\Ogre 3D\Projetos\OgreImage\OgreImage\bin\x64\Debug\OgreImage.pdb
+\\ti_2\D\3D\Ogre 3D\Projetos\OgreImage\Bin\x64\OgreImage.dll
+\\ti_2\D\3D\Ogre 3D\Projetos\OgreImage\Bin\x64\OgreImage.pdb
+\\ti_2\D\3D\Ogre 3D\Projetos\OgreImage\OgreImage\obj\x64\Debug\OgreImage.csproj.AssemblyReference.cache
+\\ti_2\D\3D\Ogre 3D\Projetos\OgreImage\OgreImage\obj\x64\Debug\AuEOgre.g.cs
+\\ti_2\D\3D\Ogre 3D\Projetos\OgreImage\OgreImage\obj\x64\Debug\OgreImage_MarkupCompile.cache
+\\ti_2\D\3D\Ogre 3D\Projetos\OgreImage\OgreImage\obj\x64\Debug\OgreImage_MarkupCompile.lref
+\\ti_2\D\3D\Ogre 3D\Projetos\OgreImage\OgreImage\obj\x64\Debug\AuEOgre.baml
+\\ti_2\D\3D\Ogre 3D\Projetos\OgreImage\OgreImage\obj\x64\Debug\OgreImage.g.resources
+\\ti_2\D\3D\Ogre 3D\Projetos\OgreImage\OgreImage\obj\x64\Debug\OgreImage.Properties.Resources.resources
+\\ti_2\D\3D\Ogre 3D\Projetos\OgreImage\OgreImage\obj\x64\Debug\OgreImage.csproj.GenerateResource.cache
+\\ti_2\D\3D\Ogre 3D\Projetos\OgreImage\OgreImage\obj\x64\Debug\OgreImage.csproj.CoreCompileInputs.cache
+\\ti_2\D\3D\Ogre 3D\Projetos\OgreImage\OgreImage\obj\x64\Debug\OgreImage.csproj.Up2Date
+\\ti_2\D\3D\Ogre 3D\Projetos\OgreImage\OgreImage\obj\x64\Debug\OgreImage.dll
+\\ti_2\D\3D\Ogre 3D\Projetos\OgreImage\OgreImage\obj\x64\Debug\OgreImage.pdb
+D:\3D\Ogre 3D\Projetos\OgreImage\OgreImage\obj\x64\Debug\OgreImage.csproj.AssemblyReference.cache
+D:\3D\Ogre 3D\Projetos\OgreImage\OgreImage\obj\x64\Debug\AuEOgre.g.cs
+D:\3D\Ogre 3D\Projetos\OgreImage\OgreImage\obj\x64\Debug\OgreImage_MarkupCompile.cache
+D:\3D\Ogre 3D\Projetos\OgreImage\OgreImage\obj\x64\Debug\OgreImage_MarkupCompile.lref
+D:\3D\Ogre 3D\Projetos\OgreImage\Bin\x64\OgreImage.dll
+D:\3D\Ogre 3D\Projetos\OgreImage\Bin\x64\OgreImage.pdb
+D:\3D\Ogre 3D\Projetos\OgreImage\OgreImage\obj\x64\Debug\AuEOgre.baml
+D:\3D\Ogre 3D\Projetos\OgreImage\OgreImage\obj\x64\Debug\OgreImage.g.resources
+D:\3D\Ogre 3D\Projetos\OgreImage\OgreImage\obj\x64\Debug\OgreImage.Properties.Resources.resources
+D:\3D\Ogre 3D\Projetos\OgreImage\OgreImage\obj\x64\Debug\OgreImage.csproj.GenerateResource.cache
+D:\3D\Ogre 3D\Projetos\OgreImage\OgreImage\obj\x64\Debug\OgreImage.csproj.CoreCompileInputs.cache
+D:\3D\Ogre 3D\Projetos\OgreImage\OgreImage\obj\x64\Debug\OgreImage.csproj.Up2Date
+D:\3D\Ogre 3D\Projetos\OgreImage\OgreImage\obj\x64\Debug\OgreImage.dll
+D:\3D\Ogre 3D\Projetos\OgreImage\OgreImage\obj\x64\Debug\OgreImage.pdb
+D:\AuE\VisualPlan\OgreImage\Bin\x64\OgreImage.dll
+D:\AuE\VisualPlan\OgreImage\Bin\x64\OgreImage.pdb
+D:\AuE\VisualPlan\OgreImage\OgreImage\obj\x64\Debug\OgreImage.csproj.AssemblyReference.cache
+D:\AuE\VisualPlan\OgreImage\OgreImage\obj\x64\Debug\AuEOgre.g.cs
+D:\AuE\VisualPlan\OgreImage\OgreImage\obj\x64\Debug\OgreImage_MarkupCompile.cache
+D:\AuE\VisualPlan\OgreImage\OgreImage\obj\x64\Debug\OgreImage_MarkupCompile.lref
+D:\AuE\VisualPlan\OgreImage\OgreImage\obj\x64\Debug\AuEOgre.baml
+D:\AuE\VisualPlan\OgreImage\OgreImage\obj\x64\Debug\OgreImage.g.resources
+D:\AuE\VisualPlan\OgreImage\OgreImage\obj\x64\Debug\OgreImage.Properties.Resources.resources
+D:\AuE\VisualPlan\OgreImage\OgreImage\obj\x64\Debug\OgreImage.csproj.GenerateResource.cache
+D:\AuE\VisualPlan\OgreImage\OgreImage\obj\x64\Debug\OgreImage.csproj.CoreCompileInputs.cache
+D:\AuE\VisualPlan\OgreImage\OgreImage\obj\x64\Debug\OgreImage.csproj.Up2Date
+D:\AuE\VisualPlan\OgreImage\OgreImage\obj\x64\Debug\OgreImage.dll
+D:\AuE\VisualPlan\OgreImage\OgreImage\obj\x64\Debug\OgreImage.pdb

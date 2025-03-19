@@ -1,0 +1,8 @@
+dn = ny
+up = py
+
+bk = nz
+fr = pz
+
+rt = nx
+lf = px

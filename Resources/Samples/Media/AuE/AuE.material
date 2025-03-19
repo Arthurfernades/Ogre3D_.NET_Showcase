@@ -1,0 +1,234 @@
+material AuE/SkyBox
+{
+	technique
+	{
+		pass
+		{
+			lighting off
+			depth_write off
+
+			texture_unit
+			{
+				cubic_texture aue.png separateUV
+				tex_address_mode clamp
+			}
+		}
+	}
+}
+
+material AuE/IASkyBox
+{
+	technique
+	{
+		pass
+		{
+			lighting off
+			depth_write off
+
+			texture_unit
+			{
+				cubic_texture cube.png separateUV
+				tex_address_mode clamp
+			}
+		}
+	}
+}
+
+material AuE/IASkyDome
+{
+	technique
+	{
+		pass
+		{
+			lighting off
+			depth_write off
+
+			texture_unit
+			{
+				texture skydome.jpg
+				scroll_anim 0.15 0
+			}
+		}
+	}
+}
+
+material AuE/ApalacheSkyBox
+{
+	technique
+	{
+		pass
+		{
+			lighting off
+			depth_write off
+
+			texture_unit
+			{
+				cubic_texture apalache.png separateUV
+				tex_address_mode clamp
+			}
+		}
+	}
+}
+
+material AuE/GalaxySkyDome
+{
+    technique
+    {
+        pass
+        {
+            lighting off
+            depth_write off
+
+            // Textura de céu com rotação suave
+            texture_unit
+            {
+                texture night_skydome.png
+                scroll_anim 0.05 0  // Desacelera a rotação da textura para dar efeito suave
+            }
+        }
+    }
+}
+
+material AuE/CitySkyBox
+{
+	technique
+	{
+		pass
+		{
+			lighting off
+			depth_write off
+
+			texture_unit
+			{
+				cubic_texture city.png separateUV
+				tex_address_mode clamp
+			}
+		}
+	}
+}
+
+material AuE/CampoSkyBox
+{
+	technique
+	{
+		pass
+		{
+			lighting off
+			depth_write off
+
+			texture_unit
+			{
+				cubic_texture campo.png separateUV
+				tex_address_mode clamp
+			}
+		}
+	}
+}
+
+material AuE/NightSkyBox
+{
+	technique
+	{
+		pass
+		{
+			lighting off
+			depth_write off
+
+			texture_unit
+			{
+				cubic_texture est.png separateUV
+				tex_address_mode clamp
+			}
+		}
+	}
+}
+
+material AuE/GrassSkyBox
+{
+	technique
+	{
+		pass
+		{
+			lighting off
+			depth_write off
+
+			texture_unit
+			{
+				cubic_texture img2.png separateUV
+				tex_address_mode clamp
+			}
+		}
+	}
+}
+
+material AuE/DrawSkyDome
+{
+	technique
+	{
+		pass
+		{
+			lighting off
+			depth_write off
+
+			texture_unit
+			{
+				texture skydomedraw.png
+				scroll_anim 0.15 0
+			}
+		}
+	}
+}
+
+material AuE/BlueNightSkyDome
+{
+	technique
+	{
+		pass
+		{
+			lighting off
+			depth_write off
+
+			texture_unit
+			{
+				texture nightblueskydome.jpg
+				scroll_anim 0.15 0
+			}
+		}
+	}
+}
+
+material AuE/BlueSkyDome
+{
+	technique
+	{
+		pass
+		{
+			lighting off
+			depth_write off
+
+			texture_unit
+			{
+				texture blueskydome.png
+				scroll_anim 0.15 0
+			}
+		}
+	}
+}
+
+material AuE/PixPlantCloudySkyDome
+{
+	technique
+	{
+		pass
+		{
+			lighting off
+			depth_write off
+
+			texture_unit
+			{
+				texture pixplantcloudy.jpg
+				scroll_anim 0.15 0
+			}
+		}
+	}
+}

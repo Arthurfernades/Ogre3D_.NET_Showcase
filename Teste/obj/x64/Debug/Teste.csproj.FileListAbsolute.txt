@@ -1,0 +1,41 @@
+D:\3D\Ogre 3D\Projetos\OgreImage\Teste\bin\x64\Debug\Teste.exe.config
+D:\3D\Ogre 3D\Projetos\OgreImage\Teste\bin\x64\Debug\Teste.exe
+D:\3D\Ogre 3D\Projetos\OgreImage\Teste\bin\x64\Debug\Teste.pdb
+D:\3D\Ogre 3D\Projetos\OgreImage\Teste\bin\x64\Debug\OgreImage.dll
+D:\3D\Ogre 3D\Projetos\OgreImage\Teste\bin\x64\Debug\OgreImage.pdb
+D:\3D\Ogre 3D\Projetos\OgreImage\Teste\obj\x64\Debug\Teste.csproj.AssemblyReference.cache
+D:\3D\Ogre 3D\Projetos\OgreImage\Teste\obj\x64\Debug\ModalDirectX.g.cs
+D:\3D\Ogre 3D\Projetos\OgreImage\Teste\obj\x64\Debug\App.g.cs
+D:\3D\Ogre 3D\Projetos\OgreImage\Teste\obj\x64\Debug\Teste_MarkupCompile.cache
+D:\3D\Ogre 3D\Projetos\OgreImage\Teste\obj\x64\Debug\Teste_MarkupCompile.lref
+D:\3D\Ogre 3D\Projetos\OgreImage\Bin\x64\Teste.exe.config
+D:\3D\Ogre 3D\Projetos\OgreImage\Bin\x64\Teste.exe
+D:\3D\Ogre 3D\Projetos\OgreImage\Bin\x64\Teste.pdb
+D:\3D\Ogre 3D\Projetos\OgreImage\Teste\obj\x64\Debug\MainWindow.g.cs
+D:\3D\Ogre 3D\Projetos\OgreImage\Teste\obj\x64\Debug\MainWindow.baml
+D:\3D\Ogre 3D\Projetos\OgreImage\Teste\obj\x64\Debug\ModalDirectX.baml
+D:\3D\Ogre 3D\Projetos\OgreImage\Teste\obj\x64\Debug\Teste.g.resources
+D:\3D\Ogre 3D\Projetos\OgreImage\Teste\obj\x64\Debug\Teste.Properties.Resources.resources
+D:\3D\Ogre 3D\Projetos\OgreImage\Teste\obj\x64\Debug\Teste.csproj.GenerateResource.cache
+D:\3D\Ogre 3D\Projetos\OgreImage\Teste\obj\x64\Debug\Teste.csproj.CoreCompileInputs.cache
+D:\3D\Ogre 3D\Projetos\OgreImage\Teste\obj\x64\Debug\Teste.csproj.Up2Date
+D:\3D\Ogre 3D\Projetos\OgreImage\Teste\obj\x64\Debug\Teste.exe
+D:\3D\Ogre 3D\Projetos\OgreImage\Teste\obj\x64\Debug\Teste.pdb
+D:\AuE\VisualPlan\OgreImage\Bin\x64\Teste.exe.config
+D:\AuE\VisualPlan\OgreImage\Bin\x64\Teste.exe
+D:\AuE\VisualPlan\OgreImage\Bin\x64\Teste.pdb
+D:\AuE\VisualPlan\OgreImage\Teste\obj\x64\Debug\Teste.csproj.AssemblyReference.cache
+D:\AuE\VisualPlan\OgreImage\Teste\obj\x64\Debug\MainWindow.g.cs
+D:\AuE\VisualPlan\OgreImage\Teste\obj\x64\Debug\ModalDirectX.g.cs
+D:\AuE\VisualPlan\OgreImage\Teste\obj\x64\Debug\App.g.cs
+D:\AuE\VisualPlan\OgreImage\Teste\obj\x64\Debug\Teste_MarkupCompile.cache
+D:\AuE\VisualPlan\OgreImage\Teste\obj\x64\Debug\Teste_MarkupCompile.lref
+D:\AuE\VisualPlan\OgreImage\Teste\obj\x64\Debug\MainWindow.baml
+D:\AuE\VisualPlan\OgreImage\Teste\obj\x64\Debug\ModalDirectX.baml
+D:\AuE\VisualPlan\OgreImage\Teste\obj\x64\Debug\Teste.g.resources
+D:\AuE\VisualPlan\OgreImage\Teste\obj\x64\Debug\Teste.Properties.Resources.resources
+D:\AuE\VisualPlan\OgreImage\Teste\obj\x64\Debug\Teste.csproj.GenerateResource.cache
+D:\AuE\VisualPlan\OgreImage\Teste\obj\x64\Debug\Teste.csproj.CoreCompileInputs.cache
+D:\AuE\VisualPlan\OgreImage\Teste\obj\x64\Debug\Teste.csproj.Up2Date
+D:\AuE\VisualPlan\OgreImage\Teste\obj\x64\Debug\Teste.exe
+D:\AuE\VisualPlan\OgreImage\Teste\obj\x64\Debug\Teste.pdb
