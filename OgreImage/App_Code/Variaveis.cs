@@ -8,11 +8,6 @@ namespace OgreEngine
 
         public static OgreImage myImage;
 
-        public enum Engine
-        {
-            DX9, DX11
-        }
-
         public enum eVPCamera
         {
             eVPTop = 1,
