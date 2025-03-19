@@ -1,9 +1,7 @@
 ﻿using org.ogre;
-using SharpDX;
 using System;
 using System.Windows;
 using System.Windows.Interop;
-using System.Windows.Media.Media3D;
 using Camera = org.ogre.Camera;
 
 namespace OgreEngine

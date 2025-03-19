@@ -160,7 +160,8 @@ namespace Teste
 
             foreach (string name in meshNames)
             {
-                BitmapImage icon = new BitmapImage(new Uri($"Teste/img/listbox/{name}.png", UriKind.Relative));
+                string fullPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "../../Teste/img/listbox/" + name + ".png");
+                BitmapImage icon = new BitmapImage(new Uri(fullPath, UriKind.Absolute));
 
                 Image meshImage = new Image
                 {
@@ -423,7 +424,7 @@ namespace Teste
 
                 DeleteConvertedFiles(outputDirectory);
 
-                EditConfigFile(@"D:\3D\Ogre 3D\Projetos\OgreImage\Bin\x64\resources.cfg", "AuE", "Zip=" + zipFilePath);
+                EditConfigFile(@"D:\3D\Ogre 3D\Projetos\OgreImage\Bin\x64\resources.cfg", "MyResource", "Zip=" + zipFilePath);
 
                 MessageBox.Show($"Conversão e compactação concluídas! Arquivos salvos em: {zipFilePath}", "Sucesso", MessageBoxButton.OK, MessageBoxImage.Information);
             }
@@ -474,7 +475,6 @@ namespace Teste
         {
             try
             {
-                // Lê todo o conteúdo do arquivo
                 var lines = File.ReadAllLines(filePath);
 
                 bool sectionFound = false;
@@ -485,29 +485,24 @@ namespace Teste
                 {
                     newLines.Add(line);
 
-                    // Verifica se encontramos a seção correta
                     if (line.Trim().Equals($"[{section}]"))
                     {
                         sectionFound = true;
                     }
 
-                    // Se a seção foi encontrada, e a entrada ainda não foi adicionada
                     if (sectionFound && !entryAdded)
                     {
-                        // Adiciona a nova linha após encontrar a seção
                         newLines.Add(newEntry);
                         entryAdded = true;
                     }
                 }
 
-                // Se a seção não foi encontrada, a adiciona
                 if (!sectionFound)
                 {
                     newLines.Add($"[{section}]");
                     newLines.Add(newEntry);
                 }
 
-                // Grava o conteúdo de volta ao arquivo
                 File.WriteAllLines(filePath, newLines);
                 Console.WriteLine("Arquivo atualizado com sucesso!");
             }
