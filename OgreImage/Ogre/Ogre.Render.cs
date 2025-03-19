@@ -41,31 +41,6 @@ namespace OgreEngine
 
         #endregion
 
-        #region DirectX 9
-
-        public void CreateTexture9()
-        {
-            if (texturePtr != null)
-                DisposeRenderTarget();
-
-            texturePtr = TextureManager.getSingleton().createManual(
-                            "Ogre Render",
-                            ResourceGroupManager.DEFAULT_RESOURCE_GROUP_NAME,
-                            TextureType.TEX_TYPE_2D,
-                            (uint)TextureWidth,
-                            (uint)TextureHeight,
-                            32,
-                            0,
-                            PixelFormat.PF_R8G8B8A8,
-                            0x20);
-
-            InitRenderTarget();
-
-            InitCompositors();
-        }
-
-        #endregion
-
         #region DirectX 11
 
         /// <summary>
@@ -174,13 +149,6 @@ namespace OgreEngine
 
             viewport = renderTarget.addViewport(cam); //Cria a viewport do Render Target da texutra com a câmera da cena.
             viewport.setBackgroundColour(new ColourValue(0, 0, 0, 0)); //Fundo transparente.            
-
-            if (DX == Variaveis.Engine.DX9)
-            {
-                renderTarget.getCustomAttribute("DDBACKBUFFER", out IntPtr buffer);
-
-                SharedHandle = buffer;
-            }
         }
 
         /// <summary>
@@ -203,13 +171,10 @@ namespace OgreEngine
 
             #endregion
 
-            #region Dipose SharpDX (DX11)
+            #region Dipose SharpDX
 
-            if (DX == Variaveis.Engine.DX11)
-            {
-                texture.Dispose();
-                d9texture.Dispose();
-            }
+            texture.Dispose();
+            d9texture.Dispose();
 
             #endregion
         }
@@ -238,19 +203,16 @@ namespace OgreEngine
 
             #endregion
 
-            #region SharpDX (DX11)
+            #region SharpDX
 
-            if (DX == Variaveis.Engine.DX11)
-            {
-                device.Dispose();
-                device = null;
+            device.Dispose();
+            device = null;
 
-                d9context.Dispose();
-                d9context = null;
+            d9context.Dispose();
+            d9context = null;
 
-                d9device.Dispose();
-                d9device = null;
-            }
+            d9device.Dispose();
+            d9device = null;
 
             #endregion
         }

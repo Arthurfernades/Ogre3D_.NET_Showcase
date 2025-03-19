@@ -8,23 +8,15 @@ namespace OgreEngine
 {
     public class OgreImage : D3DImage
     {
-        public Engine DX { get { return myOgre.DX; } }
-
         public bool isRendering = false;
 
-        public void InitOgre(Engine vDX)
+        public void InitOgre()
         {
             try
             {
-                myOgre = new Ogre
-                {
-                    DX = vDX,
-                };
+                myOgre = new Ogre();
 
-                if (vDX == Engine.DX11)
-                    myOgre.initApp(); //Inicialização automática do Ogre (setup).
-                else
-                    myOgre.SetupDX9();
+                myOgre.initApp(); //Inicialização automática do Ogre (setup).
 
             }
             catch (Exception ex)
@@ -40,14 +32,7 @@ namespace OgreEngine
             myOgre.TextureHeight = height;
             myOgre.TextureWidth = width;
 
-            if (DX == Engine.DX11)
-            {
-                myOgre.CreateTexture11();
-            }
-            else
-            {
-                myOgre.CreateTexture9();
-            }
+            myOgre.CreateTexture11();
 
             AttachRenderTargert();
 
@@ -104,10 +89,7 @@ namespace OgreEngine
 
                 myOgre.root.renderOneFrame();
 
-                if (DX == Engine.DX11)
-                {
-                    myOgre.renderTarget.doFlush();                    
-                }
+                myOgre.renderTarget.doFlush();
 
                 AddDirtyRect(new Int32Rect(0, 0, myOgre.TextureWidth, myOgre.TextureHeight));
             }

@@ -26,56 +26,22 @@ namespace Teste
         {
             InitializeComponent();
 
-            Title = "PhotoLandOgre";
+            Title = "Ogre Showcase - (x64)";
 
             FillObjectListBox();
         }
 
         private void imgOgre_Loaded(object sender, RoutedEventArgs e)
         {
-            this.Visibility = Visibility.Hidden;
-
-            DirectXChoice();
+            imgOgre.Init();
 
             LoadSkyBox();
 
             LoadTerrain();
 
             LoadCompositors();
-
-            this.Visibility = Visibility.Visible;
         }
-
-        private void DirectXChoice()
-        {
-            var directXWindow = new ModalDirectX
-            {
-                Owner = this
-            };
-
-            bool? result = directXWindow.ShowDialog();
-
-            if ((bool)result)
-            {
-                InitDirectX(directXWindow.escolha);
-            }
-        }
-
-        private void InitDirectX(string dx)
-        {
-            switch (dx)
-            {
-                case "DirectX 11":
-                    imgOgre.Init(Engine.DX11);
-                    this.Title += " (DirectX 11 - x64)";
-                    break;
-
-                case "DirectX 9":
-                    imgOgre.Init(Engine.DX9);
-                    this.Title += " (DirectX 9 - x64)";
-                    break;
-            }
-        }
+        
         private void PrintButton_Click(object sender, RoutedEventArgs e)
         {
             imgOgre.PrintScreen(@"C:\Users\Admin\Pictures\output_new.png");
@@ -126,7 +92,7 @@ namespace Teste
                 {
                     HostImgGrid.Background = Brushes.Transparent;
 
-                    brush.ImageSource = new BitmapImage(new Uri("D:/AuE/VisualPlan/OgreImage/Teste/img/closed_eye_icon.png", UriKind.Absolute));
+                    brush.ImageSource = new BitmapImage(new Uri("Teste/img/closed_eye_icon.png", UriKind.Relative));
 
                     isEyeOpened = false;
                 }
@@ -144,7 +110,7 @@ namespace Teste
                         HostImgGrid.Background = gridBrush;
                     }
 
-                    brush.ImageSource = new BitmapImage(new Uri("D:/AuE/VisualPlan/OgreImage/Teste/img/opened_eye_icon.png", UriKind.Absolute));
+                    brush.ImageSource = new BitmapImage(new Uri("Teste/img/opened_eye_icon.png", UriKind.Relative));
 
                     isEyeOpened = true;
                 }
@@ -194,13 +160,15 @@ namespace Teste
 
             foreach (string name in meshNames)
             {
+                BitmapImage icon = new BitmapImage(new Uri($"Teste/img/listbox/{name}.png", UriKind.Relative));
+
                 Image meshImage = new Image
                 {
                     Width = 85,
                     Height = 75,
                     Stretch = Stretch.Uniform,
                     IsHitTestVisible = true,
-                    Source = new BitmapImage(new Uri("D:/AuE/VisualPlan/OgreImage/Teste/img/listbox/" + name + ".png", UriKind.Absolute))
+                    Source = icon
                 };
 
                 if (name == "RZR-002")

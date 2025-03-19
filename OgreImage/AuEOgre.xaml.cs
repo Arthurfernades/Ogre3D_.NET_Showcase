@@ -36,14 +36,6 @@ namespace OgreImage
 
         #endregion
 
-        /// <summary>
-        /// Render System que está sendo usado.
-        /// </summary>
-        public Engine DX
-        {
-            get { return myImage.DX; }
-        }
-
         public AuEOgre()
         {
             InitializeComponent();
@@ -54,12 +46,11 @@ namespace OgreImage
         /// <summary>
         /// Inicializa o Ogre.
         /// </summary>
-        /// <param name="DX">RenderSystem DX11 ou DX9</param>
-        public void Init(Engine DX)
+        public void Init()
         {
             img.Source = myImage;
 
-            myImage.InitOgre(DX);
+            myImage.InitOgre();
 
             myImage.Resize((int)ActualWidth, (int)ActualHeight);
 

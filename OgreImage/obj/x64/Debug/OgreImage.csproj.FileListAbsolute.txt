@@ -42,3 +42,17 @@ D:\AuE\VisualPlan\OgreImage\OgreImage\obj\x64\Debug\OgreImage.csproj.CoreCompile
 D:\AuE\VisualPlan\OgreImage\OgreImage\obj\x64\Debug\OgreImage.csproj.Up2Date
 D:\AuE\VisualPlan\OgreImage\OgreImage\obj\x64\Debug\OgreImage.dll
 D:\AuE\VisualPlan\OgreImage\OgreImage\obj\x64\Debug\OgreImage.pdb
+D:\Projetos_Pessoais\Ogre3D_.NET_Showcase\Bin\x64\OgreImage.dll
+D:\Projetos_Pessoais\Ogre3D_.NET_Showcase\Bin\x64\OgreImage.pdb
+D:\Projetos_Pessoais\Ogre3D_.NET_Showcase\OgreImage\obj\x64\Debug\OgreImage.csproj.AssemblyReference.cache
+D:\Projetos_Pessoais\Ogre3D_.NET_Showcase\OgreImage\obj\x64\Debug\AuEOgre.g.cs
+D:\Projetos_Pessoais\Ogre3D_.NET_Showcase\OgreImage\obj\x64\Debug\OgreImage_MarkupCompile.cache
+D:\Projetos_Pessoais\Ogre3D_.NET_Showcase\OgreImage\obj\x64\Debug\OgreImage_MarkupCompile.lref
+D:\Projetos_Pessoais\Ogre3D_.NET_Showcase\OgreImage\obj\x64\Debug\AuEOgre.baml
+D:\Projetos_Pessoais\Ogre3D_.NET_Showcase\OgreImage\obj\x64\Debug\OgreImage.g.resources
+D:\Projetos_Pessoais\Ogre3D_.NET_Showcase\OgreImage\obj\x64\Debug\OgreImage.Properties.Resources.resources
+D:\Projetos_Pessoais\Ogre3D_.NET_Showcase\OgreImage\obj\x64\Debug\OgreImage.csproj.GenerateResource.cache
+D:\Projetos_Pessoais\Ogre3D_.NET_Showcase\OgreImage\obj\x64\Debug\OgreImage.csproj.CoreCompileInputs.cache
+D:\Projetos_Pessoais\Ogre3D_.NET_Showcase\OgreImage\obj\x64\Debug\OgreImage.csproj.Up2Date
+D:\Projetos_Pessoais\Ogre3D_.NET_Showcase\OgreImage\obj\x64\Debug\OgreImage.dll
+D:\Projetos_Pessoais\Ogre3D_.NET_Showcase\OgreImage\obj\x64\Debug\OgreImage.pdb

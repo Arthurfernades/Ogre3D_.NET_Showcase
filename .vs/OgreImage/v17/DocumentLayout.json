@@ -1,0 +1,53 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Projetos_Pessoais\\Ogre3D_.NET_Showcase\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4152681C-C1AF-437B-B6F0-F6C4CB36F317}|Teste\\Teste.csproj|d:\\projetos_pessoais\\ogre3d_.net_showcase\\teste\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4152681C-C1AF-437B-B6F0-F6C4CB36F317}|Teste\\Teste.csproj|solutionrelative:teste\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4152681C-C1AF-437B-B6F0-F6C4CB36F317}|Teste\\Teste.csproj|d:\\projetos_pessoais\\ogre3d_.net_showcase\\teste\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{4152681C-C1AF-437B-B6F0-F6C4CB36F317}|Teste\\Teste.csproj|solutionrelative:teste\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "D:\\Projetos_Pessoais\\Ogre3D_.NET_Showcase\\Teste\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "Teste\\MainWindow.xaml",
+              "ToolTip": "D:\\Projetos_Pessoais\\Ogre3D_.NET_Showcase\\Teste\\MainWindow.xaml",
+              "RelativeToolTip": "Teste\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-03-19T02:20:47.372Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "D:\\Projetos_Pessoais\\Ogre3D_.NET_Showcase\\Teste\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "Teste\\MainWindow.xaml.cs",
+              "ToolTip": "D:\\Projetos_Pessoais\\Ogre3D_.NET_Showcase\\Teste\\MainWindow.xaml.cs",
+              "RelativeToolTip": "Teste\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAIMAAAAAAAAAAAAswKIAAABPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-19T02:18:53.956Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
