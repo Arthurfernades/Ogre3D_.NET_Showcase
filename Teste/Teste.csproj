@@ -113,12 +113,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\OgreImage\OgreImage.csproj">
-      <Project>{1f147ec2-ae60-44f8-8146-02730bedc686}</Project>
-      <Name>OgreImage</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="img\listbox\dragon.png" />
     <Resource Include="img\listbox\ogrehead.png" />
     <Resource Include="img\ogreWallpaper.png" />
@@ -217,6 +211,12 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\OgreImage\OgreImage.csproj">
+      <Project>{1f147ec2-ae60-44f8-8146-02730bedc686}</Project>
+      <Name>OgreImage</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

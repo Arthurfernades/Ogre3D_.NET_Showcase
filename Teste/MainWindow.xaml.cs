@@ -1,4 +1,5 @@
 ﻿using Microsoft.Win32;
+using OgreImage;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -9,7 +10,6 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using static OgreEngine.Variaveis;
 
 namespace Teste
 {
@@ -42,7 +42,7 @@ namespace Teste
         
         private void PrintButton_Click(object sender, RoutedEventArgs e)
         {
-            imgOgre.PrintScreen(@"C:\Users\Admin\Pictures\output_new.png");
+            imgOgre.myD3DImage.PrintScreen(@"C:\Users\Admin\Pictures\output_new.png");
         }
 
         private void SinbadButton_Click(object sender, RoutedEventArgs e)
@@ -62,17 +62,17 @@ namespace Teste
 
         private void AddEntity(string entityName)
         {
-            imgOgre.AddNewEntityToScene(entityName);
+            imgOgre.myD3DImage.AddNewEntityToScene(entityName);
         }
 
         private void AddPlane()
         {
-            imgOgre.AddNewPlaneToScene();
+            imgOgre.myD3DImage.AddNewPlaneToScene();
         }
 
         private void ClearSceneButton_Click(object sender, RoutedEventArgs e)
         {
-            imgOgre.ClearScene();
+            imgOgre.myD3DImage.ClearScene();
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
@@ -177,7 +177,7 @@ namespace Teste
 
             string selected= SkyComboBox.SelectedItem.ToString();
 
-            imgOgre.ChangeSky(selected);
+            imgOgre.myD3DImage.ChangeSky(selected);
         }
 
         private void TerrainComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -186,7 +186,7 @@ namespace Teste
 
             string selected = TerrainComboBox.SelectedItem.ToString();
 
-            imgOgre.ChangeTerrain(selected);
+            imgOgre.myD3DImage.ChangeTerrain(selected);
         }
 
         private void CompositorsBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -195,7 +195,7 @@ namespace Teste
 
             string selected = CompositorsBox.SelectedItem.ToString();
 
-            imgOgre.ChangeCompositor(selected);
+            imgOgre.myD3DImage.ChangeCompositor(selected);
         }        
 
         private void LoadSkyBox()
@@ -242,89 +242,89 @@ namespace Teste
 
         private void LightSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            imgOgre.UpdateBrightness((float)LightSlider.Value);
+            imgOgre.myD3DImage.UpdateBrightness((float)LightSlider.Value);
         }
 
         private void ZoomAllButton_Click(object sender, RoutedEventArgs e)
         {
-            imgOgre.ZoomAll();
+            imgOgre.myD3DImage.ZoomAll();
         }
 
         private void NWButton_Click(object sender, RoutedEventArgs e)
         {
-            imgOgre.VP_Camera(eVPCamera.eVPNW);
+            imgOgre.myD3DImage.VP_Camera(MyEnum.eVPCamera.eVPNW);
         }
 
         private void WButton_Click(object sender, RoutedEventArgs e)
         {
-            imgOgre.VP_Camera(eVPCamera.eVPLEFT);
+            imgOgre.myD3DImage.VP_Camera(MyEnum.eVPCamera.eVPLEFT);
         }
 
         private void SWButton_Click(object sender, RoutedEventArgs e)
         {
-            imgOgre.VP_Camera(eVPCamera.eVPSW);
+            imgOgre.myD3DImage.VP_Camera(MyEnum.eVPCamera.eVPSW);
         }
 
         private void NButton_Click(object sender, RoutedEventArgs e)
         {
-            imgOgre.VP_Camera(eVPCamera.eVPFRONT);
+            imgOgre.myD3DImage.VP_Camera(MyEnum.eVPCamera.eVPFRONT);
         }
 
         private void CenterButton_Click(object sender, RoutedEventArgs e)
         {
-            imgOgre.VP_Camera(eVPCamera.eVPTop);
+            imgOgre.myD3DImage.VP_Camera(MyEnum.eVPCamera.eVPTop);
         }
 
         private void SButton_Click(object sender, RoutedEventArgs e)
         {
-            imgOgre.VP_Camera(eVPCamera.eVPBACK);
+            imgOgre.myD3DImage.VP_Camera(MyEnum.eVPCamera.eVPBACK);
         }
 
         private void NEButton_Click(object sender, RoutedEventArgs e)
         {
-            imgOgre.VP_Camera(eVPCamera.eVPNE);
+            imgOgre.myD3DImage.VP_Camera(MyEnum.eVPCamera.eVPNE);
         }
 
         private void EButton_Click(object sender, RoutedEventArgs e)
         {
-            imgOgre.VP_Camera(eVPCamera.eVPRIGHT);
+            imgOgre.myD3DImage.VP_Camera(MyEnum.eVPCamera.eVPRIGHT);
         }
 
         private void SEButton_Click(object sender, RoutedEventArgs e)
         {
-            imgOgre.VP_Camera(eVPCamera.eVPSE);
+            imgOgre.myD3DImage.VP_Camera(MyEnum.eVPCamera.eVPSE);
         }
 
         private void ProjectionTypeButton_Click(object sender, RoutedEventArgs e)
         {
-            if (imgOgre.projectionStyle == eVPProjectionStyle.eVPPerspective)
-                imgOgre.CamProjectionStyle(eVPProjectionStyle.eVPOrthographic);
+            if (imgOgre.myD3DImage.projectionStyle == MyEnum.eVPProjectionStyle.eVPPerspective)
+                imgOgre.myD3DImage.CamProjectionStyle(MyEnum.eVPProjectionStyle.eVPOrthographic);
             else
-                imgOgre.CamProjectionStyle(eVPProjectionStyle.eVPPerspective);
+                imgOgre.myD3DImage.CamProjectionStyle(MyEnum.eVPProjectionStyle.eVPPerspective);
         }
 
         private void AxisButton_Click(object sender, RoutedEventArgs e)
         {
-            if (!imgOgre.isShowingGlobalGrid)
-                imgOgre.ShowGlobalAxis();
+            if (!imgOgre.myD3DImage.isShowingGlobalGrid)
+                imgOgre.myD3DImage.ShowGlobalAxis();
             else
-                imgOgre.HideGlobalAxis();
+                imgOgre.myD3DImage.HideGlobalAxis();
         }
 
         private void CameraViewButton_Click(object sender, RoutedEventArgs e)
         {
-            if (imgOgre.cameraview == eCameraView.eOrbitCamera)
-                imgOgre.ChangeCameraView(eCameraView.eFreeLookCamera);
+            if (imgOgre.myD3DImage.cameraview == MyEnum.eCameraView.eOrbitCamera)
+                imgOgre.myD3DImage.ChangeCameraView(MyEnum.eCameraView.eFreeLookCamera);
             else
-                imgOgre.ChangeCameraView(eCameraView.eOrbitCamera);
+                imgOgre.myD3DImage.ChangeCameraView(MyEnum.eCameraView.eOrbitCamera);
         }        
 
         private void FogButton_Click(object sender, RoutedEventArgs e)
         {
-            if (!imgOgre.isShowingFog)
-                imgOgre.ShowFog();
+            if (!imgOgre.myD3DImage.isShowingFog)
+                imgOgre.myD3DImage.ShowFog();
             else
-                imgOgre.HideFog();
+                imgOgre.myD3DImage.HideFog();
         }
         private void NewMeshButton_Click(object sender, RoutedEventArgs e)
         {

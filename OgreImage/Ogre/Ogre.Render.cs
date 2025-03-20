@@ -3,7 +3,7 @@ using SharpDX.Direct3D11;
 using SharpDX.Direct3D9;
 using System;
 
-namespace OgreEngine
+namespace OgreImage
 {
     public partial class Ogre
     {

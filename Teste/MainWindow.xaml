@@ -359,7 +359,7 @@
             </Button.Background>
         </Button>
         <Grid x:Name="HostImgGrid" Margin="162,100,56,40">
-            <myOgre:AuEOgre
+            <myOgre:OgreControl
                 x:Name="imgOgre"
                 Margin="5"
                 Focusable="True"

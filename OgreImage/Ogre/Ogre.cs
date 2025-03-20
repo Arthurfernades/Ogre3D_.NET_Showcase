@@ -1,6 +1,6 @@
 ﻿using org.ogre;
 
-namespace OgreEngine
+namespace OgreImage
 {
     public partial class Ogre : ApplicationContextBase
     {
@@ -10,9 +10,9 @@ namespace OgreEngine
 
         private RenderWindow renderWindow;
 
-        private SceneManager scnMgr;
-
         private RenderSystem renderSystem;
+
+        private SceneManager scnMgr;
 
         private ShaderGenerator shaderGen;
 

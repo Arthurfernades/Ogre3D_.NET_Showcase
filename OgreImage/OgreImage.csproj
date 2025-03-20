@@ -71,23 +71,27 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="AuEOgre.xaml">
+    <Page Include="OgreControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="App_Code\Variaveis.cs" />
-    <Compile Include="AuEOgre.xaml.cs">
-      <DependentUpon>AuEOgre.xaml</DependentUpon>
+    <Compile Include="OgreControl.xaml.cs">
+      <DependentUpon>OgreControl.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Ogre\Ogre.Terrain.cs" />
+    <Compile Include="Ogre\Enum\MyEnum.cs" />
+    <Compile Include="Ogre\Enum\OgreEnum.cs" />
+    <Compile Include="Ogre\Scene\Ogre.Camera.cs" />
+    <Compile Include="Ogre\Scene\Ogre.Entity.cs" />
+    <Compile Include="Ogre\Scene\Ogre.Light.cs" />
+    <Compile Include="Ogre\Scene\Ogre.Terrain.cs" />
     <Compile Include="Ogre\Ogre.cs" />
     <Compile Include="Ogre\Ogre.Helper.cs" />
     <Compile Include="Ogre\Ogre.Render.cs" />
-    <Compile Include="Ogre\Ogre.Scene.cs" />
-    <Compile Include="Ogre\OgreImage.cs" />
+    <Compile Include="Ogre\Scene\Ogre.Scene.cs" />
+    <Compile Include="Ogre\D3DImage\OgreEngine.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
