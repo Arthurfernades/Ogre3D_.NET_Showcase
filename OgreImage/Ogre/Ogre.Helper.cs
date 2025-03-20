@@ -173,27 +173,36 @@ namespace OgreEngine
 
             float sense = camManDist * 0.0012f;
 
-            Vector3 C = camNode.getPosition();
-            Vector3 P = lastEntityNode.getPosition();
+            Vector3 camPos = camNode.getPosition();
+            Vector3 entityPos = lastEntityNode.getPosition();
 
-            Vector3 V = C - P;
-            V.normalise();
+            Vector3 look = camPos - entityPos;
+            look.normalise();
 
-            Vector3 movement = new Vector3();
+            Vector3 globalUp = new Vector3(0, 1, 0);
 
-            Vector3 side = new Vector3(0, 1, 0).crossProduct(V);
+            Vector3 right, up;
 
-            side.normalise();
+            float overheadThreshold = 0.9f;
 
-            movement.x = side.x * deltaX * sense;
-            movement.y = side.y * deltaX * sense;
-            movement.z = side.z * deltaX * sense;
+            if (System.Math.Abs(look.dotProduct(globalUp)) > overheadThreshold)
+            {
+                right = new Vector3(1, 0, 0);
+                up = new Vector3(0, 0, -1);
+            }
+            else
+            {
+                right = globalUp.crossProduct(look);
+                if (right.length() < 0.001f)
+                {
+                    right = new Vector3(1, 0, 0).crossProduct(look);
+                }
+                right.normalise();
+                up = look.crossProduct(right);
+                up.normalise();
+            }
 
-            Vector3 upDown = new Vector3(0, -1, 0);
-
-            movement.x += upDown.x * deltaY * sense;
-            movement.y += upDown.y * deltaY * sense;
-            movement.z += upDown.z * deltaY * sense;
+            Vector3 movement = right.__mul__(deltaX * sense) + up.__mul__(-deltaY * sense);
 
             lastEntityNode.translate(movement, Node.TransformSpace.TS_WORLD);
         }
