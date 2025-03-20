@@ -259,25 +259,10 @@
             </Button.Background>
         </Button>
         <Button
-            x:Name="EyeButton"
-            Width="40"
-            Height="35"
-            Margin="0,165,11,0"
-            HorizontalAlignment="Right"
-            VerticalAlignment="Top"
-            BorderBrush="{x:Null}"
-            Click="EyeButton_Click"
-            Content=""
-            Foreground="{x:Null}">
-            <Button.Background>
-                <ImageBrush ImageSource="/img/opened_eye_icon.png" Stretch="Uniform" />
-            </Button.Background>
-        </Button>
-        <Button
             x:Name="ImgButton"
             Width="40"
             Height="35"
-            Margin="0,225,10,0"
+            Margin="0,162,9,0"
             HorizontalAlignment="Right"
             VerticalAlignment="Top"
             BorderBrush="{x:Null}"
@@ -292,7 +277,7 @@
             x:Name="ZoomAllButton"
             Width="40"
             Height="35"
-            Margin="0,290,10,0"
+            Margin="0,227,9,0"
             HorizontalAlignment="Right"
             VerticalAlignment="Top"
             BorderBrush="{x:Null}"
@@ -306,7 +291,7 @@
             x:Name="ProjectionTypeButton"
             Width="40"
             Height="35"
-            Margin="0,348,11,0"
+            Margin="0,285,10,0"
             HorizontalAlignment="Right"
             VerticalAlignment="Top"
             BorderBrush="{x:Null}"
@@ -335,7 +320,7 @@
             x:Name="AxisButton"
             Width="40"
             Height="35"
-            Margin="0,405,10,0"
+            Margin="0,342,9,0"
             HorizontalAlignment="Right"
             VerticalAlignment="Top"
             BorderBrush="{x:Null}"
@@ -349,7 +334,7 @@
             x:Name="CameraViewButton"
             Width="40"
             Height="35"
-            Margin="0,464,10,0"
+            Margin="0,401,9,0"
             HorizontalAlignment="Right"
             VerticalAlignment="Top"
             BorderBrush="{x:Null}"
@@ -363,7 +348,7 @@
             x:Name="FogButton"
             Width="40"
             Height="35"
-            Margin="0,518,11,0"
+            Margin="0,455,10,0"
             HorizontalAlignment="Right"
             VerticalAlignment="Top"
             BorderBrush="{x:Null}"

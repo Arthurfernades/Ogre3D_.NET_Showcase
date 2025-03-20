@@ -18,8 +18,6 @@ namespace Teste
     /// </summary>
     public partial class MainWindow : Window
     {
-        private bool isEyeOpened = true;
-
         private string selectedFilePath;
 
         public MainWindow()
@@ -80,41 +78,6 @@ namespace Teste
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             imgOgre.Dispose();
-        }
-
-        private void EyeButton_Click(object sender, RoutedEventArgs e)
-        {
-            Button btn = sender as Button;
-
-            if (btn != null && btn.Background is ImageBrush brush)
-            {
-                if (isEyeOpened)
-                {
-                    HostImgGrid.Background = Brushes.Transparent;
-
-                    brush.ImageSource = new BitmapImage(new Uri("Teste/img/closed_eye_icon.png", UriKind.Relative));
-
-                    isEyeOpened = false;
-                }
-                else
-                {
-                    if (selectedFilePath == null)
-                        HostImgGrid.Background = Brushes.White;
-                    else
-                    {
-                        ImageBrush gridBrush = new ImageBrush
-                        {
-                            ImageSource = new BitmapImage(new Uri(selectedFilePath, UriKind.Absolute))
-                        };
-
-                        HostImgGrid.Background = gridBrush;
-                    }
-
-                    brush.ImageSource = new BitmapImage(new Uri("Teste/img/opened_eye_icon.png", UriKind.Relative));
-
-                    isEyeOpened = true;
-                }
-            }
         }
 
         private void ImgButton_Click(object sender, RoutedEventArgs e)
