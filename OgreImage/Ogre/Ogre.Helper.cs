@@ -20,9 +20,9 @@ namespace OgreEngine
 
         private Camera spotLightCam;
 
-        private SceneNode lastEntityNode;
+        public SceneNode lastEntityNode;
 
-        AxisAlignedBox globalBoundingBox;
+        private AxisAlignedBox globalBoundingBox;
 
         #endregion
 
@@ -167,11 +167,11 @@ namespace OgreEngine
             lightCamMan.setYawPitchDist(new Radian(new Degree(camManYaw)), new Radian(new Degree(camManPitch)), camManDist);
         }
 
-        public void MoveObject(int deltaX, int deltaY)
+        public void MoveObject(int deltaX, int deltaY, int deltaZ)
         {
             if (lastEntityNode == null) return;
 
-            float sense = camManDist * 0.0012f;
+            float sense = lastEntityNode.getPosition().distance(camNode.getPosition()) * 0.0012f;
 
             Vector3 camPos = camNode.getPosition();
             Vector3 entityPos = lastEntityNode.getPosition();
@@ -181,7 +181,7 @@ namespace OgreEngine
 
             Vector3 globalUp = new Vector3(0, 1, 0);
 
-            Vector3 right, up;
+            Vector3 right, up, back;
 
             float overheadThreshold = 0.9f;
 
@@ -189,20 +189,25 @@ namespace OgreEngine
             {
                 right = new Vector3(1, 0, 0);
                 up = new Vector3(0, 0, -1);
+                back = new Vector3(0, -1, 0);
             }
             else
             {
                 right = globalUp.crossProduct(look);
+
                 if (right.length() < 0.001f)
                 {
                     right = new Vector3(1, 0, 0).crossProduct(look);
                 }
                 right.normalise();
+
                 up = look.crossProduct(right);
                 up.normalise();
+
+                back = right.crossProduct(up);
             }
 
-            Vector3 movement = right.__mul__(deltaX * sense) + up.__mul__(-deltaY * sense);
+            Vector3 movement = right.__mul__(deltaX * sense) + up.__mul__(-deltaY * sense) + back.__mul__(deltaZ * sense);
 
             lastEntityNode.translate(movement, Node.TransformSpace.TS_WORLD);
         }

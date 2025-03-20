@@ -1,5 +1,4 @@
 ﻿using org.ogre;
-using System;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -116,10 +115,17 @@ namespace OgreImage
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void UserControl_MouseWheel(object sender, System.Windows.Input.MouseWheelEventArgs e)
-        {
-            float zoomAmount = e.Delta > 0 ? -5.0f : 5.0f;
-
-            UpdateCameraZAxis(zoomAmount);
+        {            
+            if(myOgre.lastEntityNode != null)
+            {
+                int zoomAmount = e.Delta > 0 ? -40 : 40;
+                UpdateObjectPosition(0, 0, zoomAmount);
+            }
+            else
+            {
+                int zoomAmount = e.Delta > 0 ? -5 : 5;
+                UpdateCameraZAxis(zoomAmount);
+            }
         }
 
         /// <summary>
@@ -272,14 +278,14 @@ namespace OgreImage
             else if (isCameraPanMoving)
                 UpdateCameraPosition((int)delta.X, (int)delta.Y);
             else if (isMovingObject)
-                UpdateObjectPosition((int)delta.X, (int)delta.Y);
+                UpdateObjectPosition((int)delta.X, (int)delta.Y, 0);
 
             startPoint = currentPoint;
         }
 
-        private void UpdateObjectPosition(int x, int y)
+        private void UpdateObjectPosition(int x, int y, int z)
         {
-            myOgre.MoveObject(x, y);
+            myOgre.MoveObject(x, y, z);
 
             myImage.RenderOneFrame();
         }
