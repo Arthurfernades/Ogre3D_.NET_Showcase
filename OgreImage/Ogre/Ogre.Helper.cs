@@ -8,7 +8,7 @@ namespace OgreEngine
 {
     public partial class Ogre
     {
-        #region Variáveis
+        #region Variables
 
         public string compositor;
 
@@ -29,7 +29,7 @@ namespace OgreEngine
         #region Entity
 
         /// <summary>
-        /// Seleciona uma Entity na cena, caso tenha uma já selecionada irá trocar a seleção.
+        /// Selects an Entity in the scene, if one is already selected it will change the selection.
         /// </summary>
         /// <param name="entityName"></param>
         public void SelectEntity(string entityName)
@@ -51,7 +51,7 @@ namespace OgreEngine
         }
 
         /// <summary>
-        /// Caso tenha uma Entity selecionada irá remover a seleção.
+        /// If you have an Entity selected it will remove the selection.
         /// </summary>
         public void UnselectEntity()
         {
@@ -213,7 +213,7 @@ namespace OgreEngine
         }
 
         /// <summary>
-        /// Movimenta Camera na coordenada Z.
+        /// Moves Camera in Z axis.
         /// </summary>
         /// <param name="deltaZ"></param>
         public void PushCamera(float deltaZ)
@@ -239,10 +239,8 @@ namespace OgreEngine
             }
             else
             {
-                // Obter todos os objetos movíveis da cena
                 MovableObjectMap entityList = scnMgr.getMovableObjects("Entity");
 
-                // Calcular o bounding box global de todos os objetos
                 foreach (var entity in entityList)
                 {
                     if (entity.Value is MovableObject ent)
@@ -257,41 +255,33 @@ namespace OgreEngine
                     return;
             }
 
-            // Obter as coordenadas máximas e mínimas do bounding box
             Vector3 max = globalBoundingBox.getMaximum();
             Vector3 min = globalBoundingBox.getMinimum();
             Vector3 center = globalBoundingBox.getCenter();
 
-            // Calcular a diagonal do bounding box
-            Vector3 diagonal = new Vector3(max.x - min.x, max.y - min.y, max.z - min.z);
+            Vector3 diagonal = max.__sub__(min);
+
             float radius = diagonal.length();
 
-            // Obter o FOV da câmera
             float fovY = cam.getFOVy().valueRadians();
 
-            // Calcular a distância horizontal e vertical necessária para o zoom
             float distanceH = radius / (float)System.Math.Tan(fovY);
             float aspectRatio = TextureWidth / TextureHeight;
             fovY *= aspectRatio;
             float distanceV = radius / (float)System.Math.Tan(fovY);
 
-            // A distância final é a maior entre a horizontal e a vertical
             float distance = System.Math.Max(distanceH, distanceV);
 
-            // Ajustar a distância de clipping da câmera
             if (distance > cam.getFarClipDistance())
                 cam.setFarClipDistance(distance * 2);
 
-            // Calcular a direção da câmera
             Vector3 direction = new Vector3(camNode.getPosition().x, min.y + (max.y - min.y) / 2, camNode.getPosition().z) - camNode.getPosition();
 
             direction.normalise();
 
-            // Ajustar a posição da câmera na direção correta
-            Vector3 vNewDirection = new Vector3(direction.x * distance, direction.y * distance, direction.z * distance);
+            Vector3 vNewDirection = direction.__mul__(distance);
             var newPosition = (center - vNewDirection);
 
-            // Atualizar a posição da câmera
             camNodeXAxis = newPosition.x;
             camNodeYAxis = newPosition.y;
             camNodeZAxis = newPosition.z;
@@ -397,7 +387,7 @@ namespace OgreEngine
         #endregion
 
         /// <summary>
-        /// Mexe nos 3 valores da luz ambiente simultâneamente.
+        /// Adjusts the 3 ambient light values ​​simultaneously.
         /// </summary>
         /// <param name="value"></param>
         public void UpdateBrightness(float value)
@@ -483,7 +473,7 @@ namespace OgreEngine
         }
 
         /// <summary>
-        /// Normaliza as cooerdenadas WPF para a cena no Ogre e chama o méto CheckRayIntersection.
+        /// Normalize the WPF coordinates for the scene in Ogre and call the CheckRayIntersection method.
         /// </summary>
         /// <param name="mouseX"></param>
         /// <param name="mouseY"></param>
@@ -501,7 +491,7 @@ namespace OgreEngine
         }
 
         /// <summary>
-        /// Verifica se o raio bateu em uma Entity, StaticGeometry ou em nada.
+        /// Verify if the ray hit an Entity or StaticGeometry.
         /// </summary>
         /// <param name="mouseRay"></param>
         /// <returns>entity.getName()</returns>
@@ -509,7 +499,7 @@ namespace OgreEngine
         {
             RaySceneQuery rayQuery = scnMgr.createRayQuery(mouseRay);
 
-            //Filtro de obejtos
+            //Object filter.
             //
             rayQuery.setQueryMask(0xFFFFFFFF);
             rayQuery.setSortByDistance(true);
@@ -529,7 +519,7 @@ namespace OgreEngine
                     }
                     Entity entity = hit.movable.castEntity();
 
-                    //Apenas para testes
+                    //Just for test.
                     //
                     //entity?.getParentSceneNode().getName();
                     //entity?.getName();
@@ -594,7 +584,7 @@ namespace OgreEngine
         }
 
         /// <summary>
-        /// Salva imagem do Ogre no disco
+        /// Save image in disk.
         /// </summary>
         public void SalvaRender(string vArquivo)
         {
@@ -602,7 +592,7 @@ namespace OgreEngine
         }
 
         /// <summary>
-        /// Pega o Handle da janela WPF.
+        /// Get WPF window handle.
         /// </summary>
         /// <returns></returns>
         public IntPtr getHandle()

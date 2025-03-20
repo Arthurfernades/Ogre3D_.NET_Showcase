@@ -44,15 +44,14 @@ namespace OgreEngine
         #region DirectX 11
 
         /// <summary>
-        /// Cria a textura no SharpDX com DirectX 11, passa o ponteiro da textura para o Ogre
-        /// depois faz a interoperabildade da textura para o DirectX 9.
+        /// Creates the texture in SharpDX with DirectX 11, passes the texture pointer to Ogre then interops the texture to DirectX 9.
         /// </summary>
         public void CreateTexture11()
         {
             if (texturePtr != null)
                 DisposeRenderTarget();
 
-            #region SharpDX - Criando textura do DirectX 11
+            #region SharpDX - Creating texture with DirectX 11
 
             var featureLevels = new[]
             {
@@ -85,7 +84,7 @@ namespace OgreEngine
 
             #endregion
 
-            #region Ogre - Criando textura com o ponteiro da textura do SharpDX
+            #region Ogre - Creating texture with DirectX 11 texture pointer
 
             texturePtr = TextureManager.getSingleton().create("Ogre Render", ResourceGroupManager.DEFAULT_RESOURCE_GROUP_NAME);
             texturePtr.setUsage(0x20); //0x20 = RenderTarget
@@ -94,7 +93,7 @@ namespace OgreEngine
 
             #endregion
 
-            #region SharpDX - Criando textura do DirectX 9
+            #region SharpDX - Creating DirectX 9 texture
 
             if (d9context == null)
             {
@@ -126,7 +125,7 @@ namespace OgreEngine
 
             #endregion
 
-            SharedHandle = d9texture.GetSurfaceLevel(0).NativePointer; //Pega o ponteiro da textura da superfície 0 do DirectX 9.
+            SharedHandle = d9texture.GetSurfaceLevel(0).NativePointer;
 
             InitRenderTarget();
 
@@ -138,7 +137,7 @@ namespace OgreEngine
         #region Common
 
         /// <summary>
-        /// Pega o Render Target da textura criada manualmente, seja DX 11 ou DX 9.
+        /// Takes render target from the texture and creates a viewport with the scene camera.
         /// </summary>
         public void InitRenderTarget()
         {
@@ -152,7 +151,7 @@ namespace OgreEngine
         }
 
         /// <summary>
-        /// Método utilizado quando for feito resize da textura. Libera as texturas e o render target.
+        /// Used when resize the window, to update the texture size.
         /// </summary>
         private void DisposeRenderTarget()
         {
@@ -180,7 +179,7 @@ namespace OgreEngine
         }
 
         /// <summary>
-        /// Faz dispose de tudo que é necessário (Ogre - SharpDX) para não deixar nada em memória.
+        /// All disposes.
         /// </summary>
         public void DisposeOgre()
         {

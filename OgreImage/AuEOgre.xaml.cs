@@ -116,7 +116,7 @@ namespace OgreImage
         /// <param name="e"></param>
         private void UserControl_MouseWheel(object sender, System.Windows.Input.MouseWheelEventArgs e)
         {            
-            if(myOgre.lastEntityNode != null)
+            if(myOgre.lastEntityNode != null && isMovingObject)
             {
                 int zoomAmount = e.Delta > 0 ? -40 : 40;
                 UpdateObjectPosition(0, 0, zoomAmount);
@@ -477,7 +477,7 @@ namespace OgreImage
 
         public void ChangeSky(string selected)
         {
-            if (!myOgre.MostraSkybox) return;
+            if (!myOgre.ShowSkybox) return;
 
             myOgre.AddSkyBox(selected);
 
@@ -486,7 +486,7 @@ namespace OgreImage
 
         public void ChangeTerrain(string selected)
         {
-            if (!myOgre.MostraTerreno) return;
+            if (!myOgre.ShowTerrain) return;
 
             myOgre.AddTerrain(selected);
 

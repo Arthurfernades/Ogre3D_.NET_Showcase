@@ -1,5 +1,4 @@
-﻿using org.ogre;
-using System;
+﻿using System;
 using System.Windows;
 using System.Windows.Interop;
 using static OgreEngine.Variaveis;

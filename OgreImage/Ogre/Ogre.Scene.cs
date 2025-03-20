@@ -3,16 +3,15 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Windows;
-using static org.ogre.TerrainGroup;
 using Math = org.ogre.Math;
 
 namespace OgreEngine
 {
     public partial class Ogre
     {
-        public bool MostraSkybox = true;
-        public bool MostraSombras = true;
-        public bool MostraTerreno = true;
+        public bool ShowSkybox = true;
+        public bool ShowShadows = true;
+        public bool ShowTerrain = true;
 
         private Camera cam;
 
@@ -86,7 +85,7 @@ namespace OgreEngine
         {
             #region Ambient Light
 
-            if (!MostraTerreno)
+            if (!ShowTerrain)
             {
                 realRedValue = realGreenValue = realBlueValue = 0.1f;
 
@@ -417,7 +416,7 @@ namespace OgreEngine
 
                 Debug.Print($"Adicionada({entityName})");
 
-                if (MostraTerreno)
+                if (ShowTerrain)
                     ClampToTerrain(entity, entityNode);
 
                 ZoomAll(); //Reposiociona a câmera toda a vez que for adiciona uma entidade, mas só vai mexer na câmera se alterar o bounding box global.
@@ -460,7 +459,7 @@ namespace OgreEngine
 
             #endregion
 
-            if (MostraTerreno)
+            if (ShowTerrain)
                 ClampToTerrain(groundEntity, groundEntityNode);
 
             ZoomAll();
@@ -468,7 +467,7 @@ namespace OgreEngine
 
         public void AddSkyBox(string option)
         {
-            if (!MostraSkybox) return;
+            if (!ShowSkybox) return;
 
             switch (option)
             {
@@ -553,7 +552,7 @@ namespace OgreEngine
         {
             if (scnMgr == null) return;
 
-            if (lastEntityNode != null) // Exclui uma entidade selecionada na cena.
+            if (lastEntityNode != null)
             {
                 scnMgr.destroyEntity(lastEntityNode.getAttachedObject(0));
 

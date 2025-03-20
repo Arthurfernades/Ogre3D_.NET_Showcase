@@ -1,11 +1,10 @@
 ﻿using org.ogre;
-using System;
 
 namespace OgreEngine
 {
     public partial class Ogre : ApplicationContextBase
     {
-        #region Variáveis
+        #region Variables
 
         public Root root;
 
@@ -20,8 +19,8 @@ namespace OgreEngine
         #endregion
 
         /// <summary>
-        /// Cria janela "imaginára". Não será utilizada,
-        /// porém é necessário cria-la por necessidade do Ogre.
+        /// Create "imaginary" window. It will not be used,
+        /// but it is necessary to create it out of necessity of Ogre.        
         /// </summary>
         /// <param name="title"></param>
         /// <param name="w"></param>
@@ -32,24 +31,24 @@ namespace OgreEngine
         {
             miscParams = new NameValueMap
             {
-                ["FSAA"] = "8",
+                ["FSAA"] = "16",
                 ["Full Screen"] = "No",
                 ["VSync"] = "Yes",
                 ["sRGB Gamma Conversion"] = "Yes",
-                ["externalWindowHandle"] = getHandle().ToString() //Handle da janela WPF.
+                ["externalWindowHandle"] = getHandle().ToString() //WPF windows handle.
             };
 
-            NativeWindowPair nativeWindow = base.createWindow("AuE Ogre", 0, 0, miscParams); //Altura e largura sempre serão 0.
+            NativeWindowPair nativeWindow = base.createWindow("AuE Ogre", 0, 0, miscParams); //Height and Width will always be 0.
 
             renderWindow = nativeWindow.render;
 
-            renderWindow.setAutoUpdated(false); //Não deixa a janela "imaginária" atualizar.
+            renderWindow.setAutoUpdated(false); //Don't let the "imaginary" window update.
 
             return nativeWindow;
         }
 
         /// <summary>
-        /// Método de inicialização automática do Ogre.
+        /// Automatic initialization method of the Ogre.
         /// </summary>
         public override void setup()
         {
@@ -86,13 +85,12 @@ namespace OgreEngine
 
             #endregion
 
-            //Criar sombra antes da cena.
-            if (MostraSombras) InitShadows();
+            if (ShowShadows) InitShadows();
 
             EmptyScene();
 
-            if (MostraTerreno) CreateTerrain();
-            if (MostraSkybox) AddSkyBox("Padrão");
+            if (ShowTerrain) CreateTerrain();
+            if (ShowSkybox) AddSkyBox("Padrão");
         }        
     }
 }
