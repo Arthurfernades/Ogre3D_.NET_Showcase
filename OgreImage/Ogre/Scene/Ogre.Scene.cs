@@ -259,6 +259,11 @@ namespace OgreImage
                     scnMgr.destroyLight("SimpleLight");
 
                 CreateTerrain();
+
+                foreach (var entity in entityDictionary.Values)
+                {
+                    ClampToTerrain(entity, entity.getParentSceneNode());
+                }
             }
 
             mTerrainGroup.getTerrain(0, 0).addLayer(0);
@@ -287,6 +292,9 @@ namespace OgreImage
             }
 
             mTerrainGroup.getTerrain(0, 0).setLayerWorldSize(0, 200);
+
+            if(entityDictionary.Count > 0)
+                ZoomAll();
         }
 
         public void CleanScene()

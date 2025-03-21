@@ -272,6 +272,8 @@ namespace OgreImage
                     myOgre.EntitySize();
                     break;
             }
+
+            RenderOneFrame();
         }
 
         #endregion

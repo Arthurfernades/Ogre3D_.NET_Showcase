@@ -62,7 +62,7 @@ namespace OgreImage
             mTerrainGlobals.setCompositeMapDiffuse(light.getDiffuseColour());
 
             //Terrain box height
-            mTerrainGlobals.setSkirtSize(2);
+            mTerrainGlobals.setSkirtSize(100);
 
             mTerrainGlobals.setUseRayBoxDistanceCalculation(true);
         }

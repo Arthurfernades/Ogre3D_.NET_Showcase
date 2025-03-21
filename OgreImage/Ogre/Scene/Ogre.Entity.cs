@@ -29,9 +29,7 @@ namespace OgreImage
 
                 entityDictionary.Add(entityName, entity);
 
-                float entityHeight = entity.getBoundingBox().getMaximum().y - entity.getBoundingBox().getMinimum().y / 2;
-
-                SceneNode entityNode = scnMgr.getRootSceneNode().createChildSceneNode(entityName, new Vector3(0, 5, 0));
+                SceneNode entityNode = scnMgr.getRootSceneNode().createChildSceneNode(entityName, new Vector3(0, 0, 0));
                 entityNode.lookAt(entityNode.getPosition(), Node.TransformSpace.TS_WORLD);
                 entity.setCastShadows(true);
                 entityNode.attachObject(entity);
@@ -116,7 +114,7 @@ namespace OgreImage
 
             float terrainYAxis = mTerrainGroup.getHeightAtWorldPosition(entityNode.getPosition());
 
-            entityNode.setPosition(0, -entityYAxis + terrainYAxis, 0);
+            entityNode.setPosition(entityNode.getPosition().x, -entityYAxis + terrainYAxis, entityNode.getPosition().y);
         }
 
         public Vector3 EntitySize()
