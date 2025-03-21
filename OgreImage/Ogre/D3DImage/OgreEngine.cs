@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Interop;
+using System.Windows.Media;
 
 namespace OgreImage
 {
@@ -108,7 +109,7 @@ namespace OgreImage
         {
             try
             {
-                Lock();
+                Lock();                
 
                 myOgre.root.renderOneFrame();
 
@@ -161,6 +162,11 @@ namespace OgreImage
         public void UpdatePivotPosition(string direction)
         {
             myOgre.MovePivotNode(direction, 1);
+        }
+
+        public void RotateEntity()
+        {
+            myOgre.RotateEntity();
         }
 
         public void UpdateObjectPosition(int x, int y, int z)

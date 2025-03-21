@@ -4,6 +4,7 @@ using System.Windows;
 using System;
 using Math = org.ogre.Math;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace OgreImage
 {
@@ -173,6 +174,11 @@ namespace OgreImage
             Vector3 movement = right.__mul__(deltaX * sense) + up.__mul__(-deltaY * sense) + back.__mul__(deltaZ * sense);
 
             lastEntityNode.translate(movement, Node.TransformSpace.TS_WORLD);
+        }
+
+        public void RotateEntity()
+        {
+            entityDictionary.First().Value.getParentNode().yaw(new Radian(new Degree(0.1f)));
         }
 
         /// <summary>

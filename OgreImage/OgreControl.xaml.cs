@@ -19,16 +19,7 @@ namespace OgreImage
 
             myD3DImage = new OgreEngine();
 
-            img.Source = myD3DImage;
-
-            CompositionTarget.Rendering += OnRenderLoop;
-        }
-
-        private void OnRenderLoop(object sender, EventArgs e)
-        {
-            if (!_isRunning) return;
-
-            myD3DImage.RenderOneFrame();
+            img.Source = myD3DImage;            
         }
 
         public void Init()
@@ -37,7 +28,19 @@ namespace OgreImage
 
             myD3DImage.Resize((int)ActualWidth, (int)ActualHeight);
 
+            myD3DImage.AddNewEntityToScene("ogrehead");
+
+            CompositionTarget.Rendering += OnRenderLoop;
+
             _isRunning = true;
+        }
+        private void OnRenderLoop(object sender, EventArgs e)
+        {
+            if (!_isRunning) return;
+
+            myD3DImage.RotateEntity();
+
+            myD3DImage.RenderOneFrame();
         }
 
         public void Dispose()
