@@ -198,13 +198,6 @@ namespace OgreImage
             RenderOneFrame();
         }
 
-        public void VP_Camera(MyEnum.eVPCamera tag)
-        {
-            myOgre.ChangeCameraDirection(tag);
-
-            RenderOneFrame();
-        }
-
         public void CamProjectionStyle(MyEnum.eVPProjectionStyle tag)
         {
             switch (tag)
@@ -331,8 +324,6 @@ namespace OgreImage
 
         public void ChangeSky(string selected)
         {
-            if (!myOgre.ShowSkybox) return;
-
             myOgre.AddSkyBox(selected);
 
             RenderOneFrame();
@@ -340,8 +331,6 @@ namespace OgreImage
 
         public void ChangeTerrain(string selected)
         {
-            if (!myOgre.ShowTerrain) return;
-
             myOgre.AddTerrain(selected);
 
             RenderOneFrame();

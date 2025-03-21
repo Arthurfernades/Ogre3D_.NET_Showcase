@@ -3,12 +3,10 @@
 namespace OgreImage
 {
     public partial class Ogre
-    {
-        public bool isLightCamOn = false;
-
+    {        
         private Camera cam;
 
-        private SceneNode camNode, lightCamNode, pivotNode;
+        private SceneNode camNode, pivotNode;
 
         private CameraMan camMan;
 
@@ -46,8 +44,6 @@ namespace OgreImage
             camManYaw += -deltaX * sense;
 
             camMan.setYawPitchDist(new Radian(new Degree(camManYaw)), new Radian(new Degree(camManPitch)), camManDist);
-
-            lightCamMan.setYawPitchDist(new Radian(new Degree(camManYaw)), new Radian(new Degree(camManPitch)), camManDist);
         }
 
         public void MovePanCam(float deltaX, float deltaY)
@@ -93,7 +89,6 @@ namespace OgreImage
             pivotNode.translate(movement, Node.TransformSpace.TS_WORLD);
 
             camMan.setYawPitchDist(new Radian(new Degree(camManYaw)), new Radian(new Degree(camManPitch)), camManDist);
-            lightCamMan.setYawPitchDist(new Radian(new Degree(camManYaw)), new Radian(new Degree(camManPitch)), camManDist);
         }
 
         public void MovePivotNode(string axis, int value)
@@ -135,14 +130,8 @@ namespace OgreImage
             pivotNode.translate(movement, Node.TransformSpace.TS_WORLD);
 
             camMan.setYawPitchDist(new Radian(new Degree(camManYaw)), new Radian(new Degree(camManPitch)), camManDist);
-
-            lightCamMan.setYawPitchDist(new Radian(new Degree(camManYaw)), new Radian(new Degree(camManPitch)), camManDist);
         }
 
-        /// <summary>
-        /// Moves Camera in Z axis.
-        /// </summary>
-        /// <param name="deltaZ"></param>
         public void PushCamera(float deltaZ)
         {
             float sense = camManDist * 0.02f;
@@ -152,8 +141,6 @@ namespace OgreImage
             camManDist += deltaZ;
 
             camMan.setYawPitchDist(new Radian(new Degree(camManYaw)), new Radian(new Degree(camManPitch)), camManDist);
-
-            lightCamMan.setYawPitchDist(new Radian(new Degree(camManYaw)), new Radian(new Degree(camManPitch)), camManDist);
         }
 
         public void ZoomAll()
@@ -226,52 +213,7 @@ namespace OgreImage
             camNode.lookAt(new Vector3(pivotNodeXAxis, pivotNodeYAxis, pivotNodeZAxis), Node.TransformSpace.TS_LOCAL);
 
             camMan.setYawPitchDist(new Radian(new Degree(camManYaw)), new Radian(new Degree(camManPitch)), camManDist);
-
-            lightCamMan.setYawPitchDist(new Radian(new Degree(camManYaw)), new Radian(new Degree(camManPitch)), camManDist);
-        }
-
-        public void ChangeCameraDirection(MyEnum.eVPCamera tag)
-        {
-            switch (tag)
-            {
-                case MyEnum.eVPCamera.eVPFRONT:
-                    camManYaw = 180;
-                    break;
-                case MyEnum.eVPCamera.eVPNW:
-                    camManYaw = 135;
-                    break;
-                case MyEnum.eVPCamera.eVPNE:
-                    camManYaw = 225;
-                    break;
-                case MyEnum.eVPCamera.eVPBACK:
-                    camManYaw = 0;
-                    break;
-                case MyEnum.eVPCamera.eVPSW:
-                    camManYaw = 45;
-                    break;
-                case MyEnum.eVPCamera.eVPSE:
-                    camManYaw = 315;
-                    break;
-                case MyEnum.eVPCamera.eVPRIGHT:
-                    camManYaw = 270;
-                    break;
-                case MyEnum.eVPCamera.eVPLEFT:
-                    camManYaw = 90;
-                    break;
-                case MyEnum.eVPCamera.eVPTop:
-                    camManPitch = (camManPitch == 90) ? 0 : 90;
-                    camManYaw = 0;
-                    break;
-            }
-
-            if (tag == MyEnum.eVPCamera.eVPFRONT || tag == MyEnum.eVPCamera.eVPBACK ||
-                tag == MyEnum.eVPCamera.eVPRIGHT || tag == MyEnum.eVPCamera.eVPLEFT)
-                camManPitch = 0;
-            else if (tag != MyEnum.eVPCamera.eVPTop)
-                camManPitch = 30;
-
-            ZoomAll();
-        }
+        }        
 
         public void ChangeCameraPerspective(MyEnum.eVPProjectionStyle eVPPerspective)
         {

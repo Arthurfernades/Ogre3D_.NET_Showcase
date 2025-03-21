@@ -4,13 +4,7 @@ namespace OgreImage
 {
     public partial class Ogre
     {
-        private AxisAlignedBox globalBoundingBox;   
-        
-        public bool ShowSkybox = true;
-
-        public bool ShowShadows = true;
-
-        public bool ShowTerrain = true;
+        private AxisAlignedBox globalBoundingBox;
 
         public void CreateScene(int i)
         {
@@ -123,16 +117,9 @@ namespace OgreImage
         {
             #region Ambient Light
 
-            if (!ShowTerrain)
+            if (!isTerrainLoaded)
             {
-                realRedValue = realGreenValue = realBlueValue = 0.1f;
-
-                scnMgr.setAmbientLight(new ColourValue(realRedValue, realGreenValue, realBlueValue));
-
-                var light = scnMgr.createLight("MainLight");
-                var lightnode = scnMgr.getRootSceneNode().createChildSceneNode();
-                lightnode.setPosition(0f, 30f, 45f);
-                lightnode.attachObject(light);
+                SimpleLight();
             }
 
             #endregion            
@@ -185,36 +172,24 @@ namespace OgreImage
             camMan.setYawPitchDist(new Radian(camManYaw), new Radian(camManPitch), camManDist);
             camMan.setTarget(pivotNode);
 
-            #endregion
-
-            #region Light CamMan Node           
-
-            lightCam = scnMgr.createLight("LightCam");
-
-            lightCam.setVisible(false);
-
-            /*if (!MostraTerreno)
-            {
-                lightCam.setType(Light.LightTypes.LT_POINT);
-                lightCam.setDiffuseColour(1f, 1f, 1f);
-            }*/
-
-            lightCamNode = scnMgr.getRootSceneNode().createChildSceneNode();
-            lightCamNode.attachObject(lightCam);
-
-            lightCamMan = new CameraMan(lightCamNode);
-            lightCamMan.setStyle(CameraStyle.CS_ORBIT);
-            lightCamMan.setYawPitchDist(new Radian(camManYaw), new Radian(camManPitch), camManDist);
-
             #endregion            
-        }        
+        }
 
         public void AddSkyBox(string option)
         {
-            if (!ShowSkybox || root == null) return;
+            if (root == null) return;
 
             switch (option)
             {
+                case "Nenhum":
+                    if (scnMgr.isSkyBoxEnabled())
+                        scnMgr.setSkyBoxEnabled(false);
+                    else if (scnMgr.isSkyDomeEnabled())
+                        scnMgr.setSkyDomeEnabled(false);
+                    else if (scnMgr.isSkyPlaneEnabled())
+                        scnMgr.setSkyPlaneEnabled(false);
+                    break;
+
                 case "Padrão":
                     scnMgr.setSkyBox(true, "AuE/SkyBox", 1000);
                     break;
@@ -239,18 +214,61 @@ namespace OgreImage
                     };
                     scnMgr.setSkyPlane(true, skyPlane, "Examples/SpaceSkyPlane", 1500, 75);
                     break;
-            }                       
+            }
         }
 
         public void AddTerrain(string option)
         {
             if (root == null) return;
 
-            byte numLayer = mTerrainGroup.getTerrain(0, 0).getLayerCount();            
-
-            for (byte i = 0; i < numLayer; i++)
+            if (option == "Nenhum")
             {
-                mTerrainGroup.getTerrain(0, 0).removeLayer(i);                
+                if (scnMgr.hasLight("TerrainLight"))
+                {
+                    scnMgr.destroyLight("TerrainLight");
+                    SimpleLight();
+                }
+
+                if (isTerrainLoaded)
+                {
+                    byte numLayer = mTerrainGroup.getTerrain(0, 0).getLayerCount();
+
+                    if (numLayer > 0)
+                    {
+                        for (byte i = 0; i < numLayer; i++)
+                        {
+                            mTerrainGroup.getTerrain(0, 0).removeLayer(i);
+                        }
+                    }
+
+                    mTerrainGroup.removeAllTerrains();
+                    mTerrainGroup.update();
+                    isTerrainLoaded = false;
+                }
+
+                return;
+            }
+
+            if (isTerrainLoaded)
+            {
+                byte numLayer = mTerrainGroup.getTerrain(0, 0).getLayerCount();
+
+                if (numLayer > 0)
+                {
+                    for (byte i = 0; i < numLayer; i++)
+                    {
+                        mTerrainGroup.getTerrain(0, 0).removeLayer(i);
+                    }
+                }
+            }
+
+
+            if (!isTerrainLoaded)
+            {
+                if (scnMgr.hasLight("SimpleLight"))
+                    scnMgr.destroyLight("SimpleLight");
+
+                CreateTerrain();
             }
 
             mTerrainGroup.getTerrain(0, 0).addLayer(0);
@@ -276,10 +294,10 @@ namespace OgreImage
                     mTerrainGroup.getTerrain(0, 0).setLayerTextureName(0, 0, "Bricks076C_diffspec.dds");
                     mTerrainGroup.getTerrain(0, 0).setLayerTextureName(0, 1, "Bricks076C_normheight.dds");
                     break;
-            }            
+            }
 
             mTerrainGroup.getTerrain(0, 0).setLayerWorldSize(0, 200);
-        }        
+        }
 
         public void CleanScene()
         {

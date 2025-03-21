@@ -39,8 +39,8 @@ namespace Teste
 
             LoadCompositors();
         }
-        
-        private void PrintButton_Click(object sender, RoutedEventArgs e)
+
+        private void PrintButton_MouseDown(object sender, MouseButtonEventArgs e)
         {
             imgOgre.myD3DImage.PrintScreen(@"C:\Users\Admin\Pictures\output_new.png");
         }
@@ -70,7 +70,7 @@ namespace Teste
             imgOgre.myD3DImage.AddNewPlaneToScene();
         }
 
-        private void ClearSceneButton_Click(object sender, RoutedEventArgs e)
+        private void ClearSceneButton_MouseDown(object sender, MouseButtonEventArgs e)
         {
             imgOgre.myD3DImage.ClearScene();
         }
@@ -80,7 +80,7 @@ namespace Teste
             imgOgre.Dispose();
         }
 
-        private void ImgButton_Click(object sender, RoutedEventArgs e)
+        private void ImgButton_MouseDown(object sender, MouseButtonEventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog
             {
@@ -132,6 +132,7 @@ namespace Teste
                     Height = 75,
                     Stretch = Stretch.Uniform,
                     IsHitTestVisible = true,
+                    Cursor = Cursors.Hand,
                     Source = icon
                 };
 
@@ -144,6 +145,7 @@ namespace Teste
                 {
                     Content = meshImage,
                     Tag = name,
+                    ToolTip = name,
                     Focusable = false
                 };
 
@@ -202,7 +204,7 @@ namespace Teste
         {
             string[] skys =
             {
-                "Padrão", "Noite", "IA", "Domo", "Plano"
+                "Nenhum", "Padrão", "Noite", "IA", "Domo", "Plano"
             };
 
             foreach (var sky in skys)
@@ -215,7 +217,7 @@ namespace Teste
         {
             string[] terrains =
             {
-                "Grama", "Grama Desgastada", "Pedra", "Tijolo"
+               "Nenhum", "Grama", "Grama Desgastada", "Pedra", "Tijolo"
             };
 
             foreach (var terrain in terrains)
@@ -245,57 +247,12 @@ namespace Teste
             imgOgre.myD3DImage.UpdateBrightness((float)LightSlider.Value);
         }
 
-        private void ZoomAllButton_Click(object sender, RoutedEventArgs e)
+        private void ZoomAllButton_MouseDown(object sender, MouseButtonEventArgs e)
         {
             imgOgre.myD3DImage.ZoomAll();
         }
 
-        private void NWButton_Click(object sender, RoutedEventArgs e)
-        {
-            imgOgre.myD3DImage.VP_Camera(MyEnum.eVPCamera.eVPNW);
-        }
-
-        private void WButton_Click(object sender, RoutedEventArgs e)
-        {
-            imgOgre.myD3DImage.VP_Camera(MyEnum.eVPCamera.eVPLEFT);
-        }
-
-        private void SWButton_Click(object sender, RoutedEventArgs e)
-        {
-            imgOgre.myD3DImage.VP_Camera(MyEnum.eVPCamera.eVPSW);
-        }
-
-        private void NButton_Click(object sender, RoutedEventArgs e)
-        {
-            imgOgre.myD3DImage.VP_Camera(MyEnum.eVPCamera.eVPFRONT);
-        }
-
-        private void CenterButton_Click(object sender, RoutedEventArgs e)
-        {
-            imgOgre.myD3DImage.VP_Camera(MyEnum.eVPCamera.eVPTop);
-        }
-
-        private void SButton_Click(object sender, RoutedEventArgs e)
-        {
-            imgOgre.myD3DImage.VP_Camera(MyEnum.eVPCamera.eVPBACK);
-        }
-
-        private void NEButton_Click(object sender, RoutedEventArgs e)
-        {
-            imgOgre.myD3DImage.VP_Camera(MyEnum.eVPCamera.eVPNE);
-        }
-
-        private void EButton_Click(object sender, RoutedEventArgs e)
-        {
-            imgOgre.myD3DImage.VP_Camera(MyEnum.eVPCamera.eVPRIGHT);
-        }
-
-        private void SEButton_Click(object sender, RoutedEventArgs e)
-        {
-            imgOgre.myD3DImage.VP_Camera(MyEnum.eVPCamera.eVPSE);
-        }
-
-        private void ProjectionTypeButton_Click(object sender, RoutedEventArgs e)
+        private void ProjectionTypeButton_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (imgOgre.myD3DImage.projectionStyle == MyEnum.eVPProjectionStyle.eVPPerspective)
                 imgOgre.myD3DImage.CamProjectionStyle(MyEnum.eVPProjectionStyle.eVPOrthographic);
@@ -303,7 +260,7 @@ namespace Teste
                 imgOgre.myD3DImage.CamProjectionStyle(MyEnum.eVPProjectionStyle.eVPPerspective);
         }
 
-        private void AxisButton_Click(object sender, RoutedEventArgs e)
+        private void AxisButton_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (!imgOgre.myD3DImage.isShowingGlobalGrid)
                 imgOgre.myD3DImage.ShowGlobalAxis();
@@ -311,22 +268,22 @@ namespace Teste
                 imgOgre.myD3DImage.HideGlobalAxis();
         }
 
-        private void CameraViewButton_Click(object sender, RoutedEventArgs e)
+        private void CameraViewButton_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (imgOgre.myD3DImage.cameraview == MyEnum.eCameraView.eOrbitCamera)
                 imgOgre.myD3DImage.ChangeCameraView(MyEnum.eCameraView.eFreeLookCamera);
             else
                 imgOgre.myD3DImage.ChangeCameraView(MyEnum.eCameraView.eOrbitCamera);
-        }        
+        }
 
-        private void FogButton_Click(object sender, RoutedEventArgs e)
+        private void FogButton_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (!imgOgre.myD3DImage.isShowingFog)
                 imgOgre.myD3DImage.ShowFog();
             else
                 imgOgre.myD3DImage.HideFog();
         }
-        private void NewMeshButton_Click(object sender, RoutedEventArgs e)
+        private void NewMeshButton_MouseDown(object sender, MouseButtonEventArgs e)
         {
             string selectedFile = "";
 
@@ -473,6 +430,11 @@ namespace Teste
             {
                 Console.WriteLine($"Erro ao editar o arquivo: {ex.Message}");
             }
-        }        
+        }
+
+        private void PrintButton_MouseEnter(object sender, MouseEventArgs e)
+        {
+            PrintButton.Opacity = 100;
+        }
     }
 }

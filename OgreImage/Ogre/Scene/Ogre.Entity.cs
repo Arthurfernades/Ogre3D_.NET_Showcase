@@ -40,7 +40,7 @@ namespace OgreImage
 
                 Debug.Print($"Adicionada({entityName})");
 
-                if (ShowTerrain)
+                if (isTerrainLoaded)
                     ClampToTerrain(entity, entityNode);
 
                 ZoomAll(); //Reposiociona a câmera toda a vez que for adiciona uma entidade, mas só vai mexer na câmera se alterar o bounding box global.
@@ -72,7 +72,7 @@ namespace OgreImage
 
             #endregion
 
-            if (ShowTerrain)
+            if (isTerrainLoaded)
                 ClampToTerrain(groundEntity, groundEntityNode);
 
             ZoomAll();

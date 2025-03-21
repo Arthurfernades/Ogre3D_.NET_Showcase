@@ -85,12 +85,9 @@ namespace OgreImage
 
             #endregion
 
-            if (ShowShadows) InitShadows();
+            InitShadows();
 
             EmptyScene();
-
-            if (ShowTerrain) CreateTerrain();
-            if (ShowSkybox) AddSkyBox("Padrão");
         }        
     }
 }

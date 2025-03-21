@@ -19,9 +19,20 @@
         <Grid.Background>
             <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
                 <GradientStop Offset="0" Color="Black" />
-                <GradientStop Offset="0.137" Color="#FF6B6B6B" />
+                <GradientStop Offset="0.2" Color="#FF6B6B6B" />
             </LinearGradientBrush>
         </Grid.Background>
+        <Image
+            x:Name="NewMeshButton"
+            Width="35"
+            Height="35"
+            Margin="120,60,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Cursor="Hand"
+            MouseDown="NewMeshButton_MouseDown"
+            Source="/img/new_icon.png"
+            ToolTip="Add New Mesh" />
         <ListBox
             x:Name="ObjectList"
             Width="147"
@@ -45,7 +56,7 @@
             x:Name="SkyComboBox"
             Width="144"
             Height="22"
-            Margin="251,62,0,0"
+            Margin="251,60,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             SelectedIndex="0"
@@ -64,147 +75,11 @@
             x:Name="TerrainComboBox"
             Width="144"
             Height="22"
-            Margin="467,61,0,0"
+            Margin="467,60,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             SelectedIndex="0"
             SelectionChanged="TerrainComboBox_SelectionChanged" />
-        <Label
-            Width="69"
-            Height="33"
-            Margin="0,7,129,0"
-            HorizontalAlignment="Right"
-            VerticalAlignment="Top"
-            HorizontalContentAlignment="Center"
-            Content="Direção"
-            FontSize="16"
-            Foreground="White" />
-        <Button
-            x:Name="NWButton"
-            Width="15"
-            Height="15"
-            Margin="0,40,183,0"
-            HorizontalAlignment="Right"
-            VerticalAlignment="Top"
-            BorderBrush="{x:Null}"
-            Click="NWButton_Click"
-            Foreground="{x:Null}">
-            <Button.Background>
-                <ImageBrush ImageSource="/img/NW_direction_arrow_icon.png" Stretch="Uniform" />
-            </Button.Background>
-        </Button>
-        <Button
-            x:Name="SWButton"
-            Width="15"
-            Height="15"
-            Margin="0,80,183,0"
-            HorizontalAlignment="Right"
-            VerticalAlignment="Top"
-            BorderBrush="{x:Null}"
-            Click="SWButton_Click"
-            Foreground="{x:Null}">
-            <Button.Background>
-                <ImageBrush ImageSource="/img/SW_direction_arrow_icon .png" Stretch="Uniform" />
-            </Button.Background>
-        </Button>
-        <Button
-            x:Name="WButton"
-            Width="15"
-            Height="15"
-            Margin="0,60,183,0"
-            HorizontalAlignment="Right"
-            VerticalAlignment="Top"
-            BorderBrush="{x:Null}"
-            Click="WButton_Click"
-            Foreground="{x:Null}">
-            <Button.Background>
-                <ImageBrush ImageSource="/img/W_direction_arrow_icon.png" Stretch="Uniform" />
-            </Button.Background>
-        </Button>
-        <Button
-            x:Name="NButton"
-            Width="15"
-            Height="15"
-            Margin="0,40,157,0"
-            HorizontalAlignment="Right"
-            VerticalAlignment="Top"
-            BorderBrush="{x:Null}"
-            Click="NButton_Click"
-            Foreground="{x:Null}">
-            <Button.Background>
-                <ImageBrush ImageSource="/img/N_direction_arrow_icon.png" />
-            </Button.Background>
-        </Button>
-        <Button
-            x:Name="CenterButton"
-            Width="15"
-            Height="15"
-            Margin="0,60,157,0"
-            HorizontalAlignment="Right"
-            VerticalAlignment="Top"
-            BorderBrush="{x:Null}"
-            Click="CenterButton_Click"
-            Foreground="{x:Null}">
-            <Button.Background>
-                <ImageBrush ImageSource="/img/Top_direction_icon.png" Stretch="Uniform" />
-            </Button.Background>
-        </Button>
-        <Button
-            x:Name="SButton"
-            Width="15"
-            Height="15"
-            Margin="0,80,157,0"
-            HorizontalAlignment="Right"
-            VerticalAlignment="Top"
-            BorderBrush="{x:Null}"
-            Click="SButton_Click"
-            Foreground="{x:Null}">
-            <Button.Background>
-                <ImageBrush ImageSource="/img/S_direction_arrow_icon.png" Stretch="Uniform" />
-            </Button.Background>
-        </Button>
-        <Button
-            x:Name="NEButton"
-            Width="15"
-            Height="15"
-            Margin="0,40,129,0"
-            HorizontalAlignment="Right"
-            VerticalAlignment="Top"
-            BorderBrush="{x:Null}"
-            Click="NEButton_Click"
-            Foreground="{x:Null}">
-            <Button.Background>
-                <ImageBrush ImageSource="/img/NE_direction_arrow_icon .png" Stretch="Uniform" />
-            </Button.Background>
-        </Button>
-        <Button
-            x:Name="EButton"
-            Width="15"
-            Height="15"
-            Margin="0,60,129,0"
-            HorizontalAlignment="Right"
-            VerticalAlignment="Top"
-            BorderBrush="{x:Null}"
-            Click="EButton_Click"
-            Foreground="{x:Null}">
-            <Button.Background>
-                <ImageBrush ImageSource="/img/E_direction_arrow_icon.png" Stretch="Uniform" />
-            </Button.Background>
-        </Button>
-        <Button
-            x:Name="SEButton"
-            Width="15"
-            Height="15"
-            Margin="0,80,129,0"
-            HorizontalAlignment="Right"
-            VerticalAlignment="Top"
-            BorderBrush="{x:Null}"
-            Click="SEButton_Click"
-            Foreground="{x:Null}">
-            <Button.Background>
-                <ImageBrush ImageSource="/img/SE_direction_arrow_icon.png" Stretch="Uniform" />
-            </Button.Background>
-        </Button>
         <Label
             Width="144"
             Height="31"
@@ -219,7 +94,7 @@
             x:Name="LightSlider"
             Width="144"
             Height="22"
-            Margin="0,62,278,0"
+            Margin="0,60,278,0"
             HorizontalAlignment="Right"
             VerticalAlignment="Top"
             Maximum="100"
@@ -243,121 +118,95 @@
             VerticalAlignment="Top"
             SelectedIndex="0"
             SelectionChanged="CompositorsBox_SelectionChanged" />
-        <Button
+        <Image
             x:Name="PrintButton"
             Width="40"
-            Height="35"
-            Margin="0,108,10,0"
+            Height="40"
+            Margin="0,100,10,0"
             HorizontalAlignment="Right"
             VerticalAlignment="Top"
-            BorderBrush="{x:Null}"
-            Click="PrintButton_Click"
-            Content=""
-            Foreground="{x:Null}">
-            <Button.Background>
-                <ImageBrush ImageSource="/img/cam_icon.png" Stretch="Uniform" />
-            </Button.Background>
-        </Button>
-        <Button
+            Cursor="Hand"
+            MouseDown="PrintButton_MouseDown"
+            MouseEnter="PrintButton_MouseEnter"
+            Source="/img/cam_icon.png"
+            ToolTip="Save Image" />
+        <Image
             x:Name="ImgButton"
             Width="40"
             Height="35"
-            Margin="0,162,9,0"
+            Margin="0,160,10,0"
             HorizontalAlignment="Right"
             VerticalAlignment="Top"
-            BorderBrush="{x:Null}"
-            Click="ImgButton_Click"
-            Content="Button"
-            Foreground="{x:Null}">
-            <Button.Background>
-                <ImageBrush ImageSource="/img/img_icon.png" Stretch="Uniform" />
-            </Button.Background>
-        </Button>
-        <Button
+            Cursor="Hand"
+            MouseDown="ImgButton_MouseDown"
+            Source="/img/img_icon.png"
+            ToolTip="Background Image" />
+        <Image
             x:Name="ZoomAllButton"
             Width="40"
             Height="35"
-            Margin="0,227,9,0"
+            Margin="0,220,9,0"
             HorizontalAlignment="Right"
             VerticalAlignment="Top"
-            BorderBrush="{x:Null}"
-            Click="ZoomAllButton_Click"
-            Foreground="{x:Null}">
-            <Button.Background>
-                <ImageBrush ImageSource="/img/zoomall_icon.png" Stretch="Uniform" />
-            </Button.Background>
-        </Button>
-        <Button
+            Cursor="Hand"
+            MouseDown="ZoomAllButton_MouseDown"
+            Source="/img/zoomall_icon.png"
+            ToolTip="Zoom All" />
+        <Image
             x:Name="ProjectionTypeButton"
             Width="40"
             Height="35"
-            Margin="0,285,10,0"
+            Margin="0,280,10,0"
             HorizontalAlignment="Right"
             VerticalAlignment="Top"
-            BorderBrush="{x:Null}"
-            Click="ProjectionTypeButton_Click"
-            Foreground="{x:Null}">
-            <Button.Background>
-                <ImageBrush ImageSource="/img/ProjectionType_icon.png" Stretch="Uniform" />
-            </Button.Background>
-        </Button>
-        <Button
+            Cursor="Hand"
+            MouseDown="ProjectionTypeButton_MouseDown"
+            Source="/img/ProjectionType_icon.png"
+            ToolTip="Camera Projection" />
+        <Image
+            x:Name="AxisButton"
+            Width="40"
+            Height="35"
+            Margin="0,340,10,0"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Top"
+            Cursor="Hand"
+            MouseDown="AxisButton_MouseDown"
+            Source="/img/axis_icon.png"
+            ToolTip="Global Grid" />
+        <Image
+            x:Name="CameraViewButton"
+            Width="40"
+            Height="35"
+            Margin="0,400,10,0"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Top"
+            Cursor="Hand"
+            MouseDown="CameraViewButton_MouseDown"
+            Source="/img/film_ico.png"
+            ToolTip="FreeLook" />
+        <Image
+            x:Name="FogButton"
+            Width="40"
+            Height="35"
+            Margin="0,460,10,0"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Top"
+            Cursor="Hand"
+            MouseDown="FogButton_MouseDown"
+            Source="/img/fog_icon.png"
+            ToolTip="Fog" />
+        <Image
             x:Name="ClearSceneButton"
             Width="40"
             Height="35"
             Margin="0,0,10,40"
             HorizontalAlignment="Right"
             VerticalAlignment="Bottom"
-            BorderBrush="{x:Null}"
-            Click="ClearSceneButton_Click"
-            Content=""
-            Foreground="{x:Null}">
-            <Button.Background>
-                <ImageBrush ImageSource="/img/trash_icon.png" Stretch="Uniform" />
-            </Button.Background>
-        </Button>
-        <Button
-            x:Name="AxisButton"
-            Width="40"
-            Height="35"
-            Margin="0,342,9,0"
-            HorizontalAlignment="Right"
-            VerticalAlignment="Top"
-            BorderBrush="{x:Null}"
-            Click="AxisButton_Click"
-            Foreground="{x:Null}">
-            <Button.Background>
-                <ImageBrush ImageSource="/img/axis_icon.png" />
-            </Button.Background>
-        </Button>
-        <Button
-            x:Name="CameraViewButton"
-            Width="40"
-            Height="35"
-            Margin="0,401,9,0"
-            HorizontalAlignment="Right"
-            VerticalAlignment="Top"
-            BorderBrush="{x:Null}"
-            Click="CameraViewButton_Click"
-            Foreground="{x:Null}">
-            <Button.Background>
-                <ImageBrush ImageSource="/img/film_ico.png" Stretch="Uniform" />
-            </Button.Background>
-        </Button>
-        <Button
-            x:Name="FogButton"
-            Width="40"
-            Height="35"
-            Margin="0,455,10,0"
-            HorizontalAlignment="Right"
-            VerticalAlignment="Top"
-            BorderBrush="{x:Null}"
-            Click="FogButton_Click"
-            Foreground="{x:Null}">
-            <Button.Background>
-                <ImageBrush ImageSource="/img/fog_icon.png" Stretch="Uniform" />
-            </Button.Background>
-        </Button>
+            Cursor="Hand"
+            MouseDown="ClearSceneButton_MouseDown"
+            Source="/img/trash_icon.png"
+            ToolTip="Delete" />
         <Grid x:Name="HostImgGrid" Margin="162,100,56,40">
             <myOgre:OgreControl
                 x:Name="imgOgre"
@@ -366,19 +215,5 @@
                 Foreground="{x:Null}"
                 Loaded="imgOgre_Loaded" />
         </Grid>
-        <Button
-            x:Name="NewMeshButton"
-            Width="30"
-            Height="34"
-            Margin="127,61,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            BorderBrush="{x:Null}"
-            Click="NewMeshButton_Click"
-            Foreground="{x:Null}">
-            <Button.Background>
-                <ImageBrush ImageSource="/img/new_icon.png" Stretch="Uniform" />
-            </Button.Background>
-        </Button>
     </Grid>
 </Window>
