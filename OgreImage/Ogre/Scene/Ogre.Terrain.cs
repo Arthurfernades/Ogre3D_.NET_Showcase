@@ -41,7 +41,7 @@ namespace OgreImage
 
             mTerrainGroup.defineTerrain(0, 0, 0);
 
-            mTerrainGroup.loadAllTerrains(false);
+            mTerrainGroup.loadAllTerrains(true);
 
             mTerrainGroup.freeTemporaryResources();
 

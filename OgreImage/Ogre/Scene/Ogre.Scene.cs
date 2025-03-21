@@ -231,16 +231,6 @@ namespace OgreImage
 
                 if (isTerrainLoaded)
                 {
-                    byte numLayer = mTerrainGroup.getTerrain(0, 0).getLayerCount();
-
-                    if (numLayer > 0)
-                    {
-                        for (byte i = 0; i < numLayer; i++)
-                        {
-                            mTerrainGroup.getTerrain(0, 0).removeLayer(i);
-                        }
-                    }
-
                     mTerrainGroup.removeAllTerrains();
                     mTerrainGroup.update();
                     isTerrainLoaded = false;
