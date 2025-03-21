@@ -1,12 +1,17 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Threading;
 
 namespace OgreImage
 {
     public partial class OgreControl : UserControl
     {
         public OgreEngine myD3DImage;
+
+        public bool _isRunning = false;
 
         public OgreControl()
         {
@@ -15,18 +20,32 @@ namespace OgreImage
             myD3DImage = new OgreEngine();
 
             img.Source = myD3DImage;
+
+            CompositionTarget.Rendering += OnRenderLoop;
+        }
+
+        private void OnRenderLoop(object sender, EventArgs e)
+        {
+            if (!_isRunning) return;
+
+            myD3DImage.RenderOneFrame();
         }
 
         public void Init()
         {            
             myD3DImage.InitOgre();
 
-            myD3DImage.Resize((int)ActualWidth, (int)ActualHeight);            
+            myD3DImage.Resize((int)ActualWidth, (int)ActualHeight);
+
+            _isRunning = true;
         }
 
         public void Dispose()
         {
             myD3DImage.DisposeOgre();
+
+            _isRunning = false;
+            CompositionTarget.Rendering -= OnRenderLoop;
         }
 
         private void UserControl_SizeChanged(object sender, SizeChangedEventArgs e)

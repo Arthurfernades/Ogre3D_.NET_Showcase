@@ -62,7 +62,7 @@ namespace OgreImage
 
             AttachRenderTargert();
 
-            RenderOneFrame();
+            //RenderOneFrame();
         }
 
         private void AttachRenderTargert()
@@ -155,7 +155,7 @@ namespace OgreImage
 
             startPoint = currentPoint;
 
-            RenderOneFrame();
+            //RenderOneFrame();
         }
 
         public void UpdatePivotPosition(string direction)
@@ -167,35 +167,35 @@ namespace OgreImage
         {
             myOgre.MoveObject(x, y, z);
 
-            RenderOneFrame();
+            //RenderOneFrame();
         }
 
         public void UpdateCameraXYAxis(int x, int y)
         {
             myOgre.MoveOrbitCam(x, y);
 
-            RenderOneFrame();
+            //RenderOneFrame();
         }
 
         public void UpdateCameraPosition(int x, int y)
         {
             myOgre.MovePanCam(x, y);
 
-            RenderOneFrame();
+            //RenderOneFrame();
         }
 
         public void UpdateCameraZAxis(float delta)
         {
             myOgre.PushCamera(delta);
 
-            RenderOneFrame();
+            //RenderOneFrame();
         }
 
         public void ZoomAll()
         {
             myOgre.ZoomAll();
 
-            RenderOneFrame();
+            //RenderOneFrame();
         }
 
         public void CamProjectionStyle(MyEnum.eVPProjectionStyle tag)
@@ -213,7 +213,7 @@ namespace OgreImage
                     break;
             }
 
-            RenderOneFrame();
+            //RenderOneFrame();
         }
 
         public void ChangeCameraView(MyEnum.eCameraView tag)
@@ -231,14 +231,14 @@ namespace OgreImage
                     break;
             }
 
-            RenderOneFrame();
+            //RenderOneFrame();
         }
 
         public void ChangeCompositor(string selected)
         {
             myOgre.ChangeCompositor(selected);
 
-            RenderOneFrame();
+            //RenderOneFrame();
         }
 
         public void PrintScreen(string vArquivo)
@@ -273,7 +273,7 @@ namespace OgreImage
                     break;
             }
 
-            RenderOneFrame();
+            //RenderOneFrame();
         }
 
         #endregion
@@ -284,14 +284,14 @@ namespace OgreImage
         {
             myOgre.SelectEntity(entityName);
 
-            RenderOneFrame();
+            //RenderOneFrame();
         }
 
         public void UnselectEntity()
         {
             myOgre.UnselectEntity();
 
-            RenderOneFrame();
+            //RenderOneFrame();
         }
 
         public void EntitySize()
@@ -307,49 +307,49 @@ namespace OgreImage
         {
             myOgre.AddEntityToScene(entityName);
 
-            RenderOneFrame();
+            //RenderOneFrame();
         }
 
         public void AddNewStaticGeometry()
         {
             myOgre.AddStaticGeometryToScene();
 
-            RenderOneFrame();
+            //RenderOneFrame();
         }
 
         public void AddNewPlaneToScene()
         {
             myOgre.AddPlaneToScene();
 
-            RenderOneFrame();
+            //RenderOneFrame();
         }
 
         public void ChangeSky(string selected)
         {
             myOgre.AddSkyBox(selected);
 
-            RenderOneFrame();
+            //RenderOneFrame();
         }
 
         public void ChangeTerrain(string selected)
         {
             myOgre.AddTerrain(selected);
 
-            RenderOneFrame();
+            //RenderOneFrame();
         }
 
         public void UpdateBrightness(float value)
         {
             myOgre.UpdateBrightness(value);
 
-            RenderOneFrame();
+            //RenderOneFrame();
         }
 
         public void ShowGlobalAxis()
         {
             myOgre.ShowGlobalAxis();
 
-            RenderOneFrame();
+            //RenderOneFrame();
 
             isShowingGlobalGrid = true;
         }
@@ -358,7 +358,7 @@ namespace OgreImage
         {
             myOgre.HideGlobalAxis();
 
-            RenderOneFrame();
+            //RenderOneFrame();
 
             isShowingGlobalGrid = false;
         }
@@ -367,7 +367,7 @@ namespace OgreImage
         {
             myOgre.ShowFog();
 
-            RenderOneFrame();
+            //RenderOneFrame();
 
             isShowingFog = true;
         }
@@ -376,7 +376,7 @@ namespace OgreImage
         {
             myOgre.HideFog();
 
-            RenderOneFrame();
+            //RenderOneFrame();
 
             isShowingFog = false;
         }
@@ -385,14 +385,14 @@ namespace OgreImage
         {
             myOgre.DeleteEntity();
 
-            RenderOneFrame();
+            //RenderOneFrame();
         }
 
         public void ClearScene()
         {
             myOgre.CleanScene();
 
-            RenderOneFrame();
+            //RenderOneFrame();
         }
 
         #endregion        
