@@ -6,7 +6,7 @@
     xmlns:local="clr-namespace:Teste"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:myOgre="clr-namespace:OgreImage;assembly=OgreImage"
-    Title="MainWindow"
+    Title="Ogre Showcase"
     Width="1600"
     Height="800"
     Background="{x:Null}"

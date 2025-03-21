@@ -8,11 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("img/dragon.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("img/ogrehead.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("img/ogrewallpaper.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("img/output_new.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("img/sinbad.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("img/visualplantutorial.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("ogreloading.png")]
 
 

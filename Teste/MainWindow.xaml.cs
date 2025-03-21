@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.IO.Compression;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -20,8 +21,14 @@ namespace Teste
     {
         private string selectedFilePath;
 
+        private LoadingScreen loadingScreen;
+
         public MainWindow()
         {
+            loadingScreen = new LoadingScreen();
+
+            loadingScreen.Show();
+
             InitializeComponent();
 
             Title = "Ogre Showcase - (x64)";
@@ -29,7 +36,19 @@ namespace Teste
             FillObjectListBox();
         }
 
+
         private void imgOgre_Loaded(object sender, RoutedEventArgs e)
+        {
+            Hide();            
+
+            InitOgre();
+
+            loadingScreen.Close();
+
+            Show();
+        }
+
+        private void InitOgre()
         {
             imgOgre.Init();
 
@@ -177,7 +196,7 @@ namespace Teste
         {
             if (SkyComboBox.SelectedItem == null) return;
 
-            string selected= SkyComboBox.SelectedItem.ToString();
+            string selected = SkyComboBox.SelectedItem.ToString();
 
             imgOgre.myD3DImage.ChangeSky(selected);
         }
@@ -198,7 +217,7 @@ namespace Teste
             string selected = CompositorsBox.SelectedItem.ToString();
 
             imgOgre.myD3DImage.ChangeCompositor(selected);
-        }        
+        }
 
         private void LoadSkyBox()
         {

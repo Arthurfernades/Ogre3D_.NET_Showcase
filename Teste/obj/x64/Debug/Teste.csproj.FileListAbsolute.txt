@@ -55,3 +55,5 @@ D:\Projetos_Pessoais\Ogre3D_.NET_Showcase\Teste\obj\x64\Debug\Teste.csproj.CoreC
 D:\Projetos_Pessoais\Ogre3D_.NET_Showcase\Teste\obj\x64\Debug\Teste.csproj.Up2Date
 D:\Projetos_Pessoais\Ogre3D_.NET_Showcase\Teste\obj\x64\Debug\Teste.exe
 D:\Projetos_Pessoais\Ogre3D_.NET_Showcase\Teste\obj\x64\Debug\Teste.pdb
+D:\Projetos_Pessoais\Ogre3D_.NET_Showcase\Teste\obj\x64\Debug\LoadingScreen.g.cs
+D:\Projetos_Pessoais\Ogre3D_.NET_Showcase\Teste\obj\x64\Debug\LoadingScreen.baml
