@@ -87,7 +87,7 @@ namespace OgreImage
             #region Ogre - Creating texture with DirectX 11 texture pointer
 
             texturePtr = TextureManager.getSingleton().create("Ogre Render", ResourceGroupManager.DEFAULT_RESOURCE_GROUP_NAME);
-            texturePtr.setUsage(0x20); //0x20 = RenderTarget
+            texturePtr.setUsage((int)TextureUsage.TU_RENDERTARGET);
             texturePtr._setD3D11Surface(texture.NativePointer);
             texturePtr.load();
 
