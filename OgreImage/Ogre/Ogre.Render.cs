@@ -185,6 +185,8 @@ namespace OgreImage
         {
             #region Ogre
 
+            root.endRenderingQueued();
+
             scnMgr.clearScene();
             scnMgr.Dispose();
             scnMgr = null;

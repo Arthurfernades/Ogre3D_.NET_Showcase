@@ -3,7 +3,6 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Threading;
 
 namespace OgreImage
 {
@@ -34,11 +33,10 @@ namespace OgreImage
 
             _isRunning = true;
         }
+
         private void OnRenderLoop(object sender, EventArgs e)
         {
             if (!_isRunning) return;
-
-            myD3DImage.RotateEntity();
 
             myD3DImage.RenderOneFrame();
         }
@@ -48,13 +46,14 @@ namespace OgreImage
             myD3DImage.DisposeOgre();
 
             _isRunning = false;
+
             CompositionTarget.Rendering -= OnRenderLoop;
         }
 
         private void UserControl_SizeChanged(object sender, SizeChangedEventArgs e)
         {            
             myD3DImage.Resize((int)ActualWidth, (int)ActualHeight);
-        }
+        } 
 
         #region Mouse Listeners
 
