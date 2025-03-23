@@ -2,7 +2,7 @@ Ogre 3D Showcase in WPF
 
 📌 Introduction
 
-This project demonstrates key features of the Ogre 3D engine using C# bindings generated with SWIG (Simplified Wrapper and Interface Generator). It integrates Ogre 3D into a WPF application, allowing real-time interaction with various rendering elements.
+This project demonstrates key features of the Ogre 3D engine (https://www.ogre3d.org/) using C# bindings generated with SWIG (Simplified Wrapper and Interface Generator). It integrates Ogre 3D into a WPF application, allowing real-time interaction with various rendering elements.
 
 The goal is to provide a foundation for developers who want to explore 3D rendering in WPF using Ogre 3D, leveraging the power of DirectX.
 
