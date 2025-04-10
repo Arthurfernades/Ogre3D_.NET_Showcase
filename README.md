@@ -32,7 +32,7 @@ You can download this repository without cloning and run the .exe file located i
 
 Clone this repository:
 
-git clone https://github.com/your-username/Ogre-3D-WPF-Showcase.git
+git clone https://github.com/Arthurfernades/Ogre-3D-WPF-Showcase.git
 cd Ogre-3D-WPF-Showcase
 
 Install required dependencies.
